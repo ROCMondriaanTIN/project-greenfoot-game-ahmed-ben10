@@ -1,4 +1,5 @@
 
+
 import greenfoot.*;
 
 /**
@@ -10,7 +11,9 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private int gem;
+    private static int gem;
+    private static int x= 300;
+    private static int y=200; 
 
     public Hero() {
         super();
@@ -25,6 +28,7 @@ public class Hero extends Mover {
         handleInput();
         getGemBlue();
         getPositie();
+        checkpointVlag();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -35,16 +39,26 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 //getWorld().removeObject(this);
-                setLocation(300,200);
+                setLocation(x,y);
                 break;
             }
         }
     }
+    public void checkpointVlag()
+    {
+    if(isTouching(checkpoint.class))    
+    {
+    this.x=3547;
+    y=673;
+    }
+    }
+    
     public String getPositie()
     {
     String positiexy= "X"+this.getX() +"y:"+this.getY(); 
     return positiexy;
     }
+    
     public int getGemBlue()
     {
     if(isTouching(gemBlue.class))    
@@ -66,7 +80,8 @@ public class Hero extends Mover {
         }
     }
 
-    public int getWidth() {
+    public int getWidth() 
+    {
         return getImage().getWidth();
     }
 

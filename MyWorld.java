@@ -56,7 +56,7 @@ public class MyWorld extends World {
         addObject(camera, 150, 800);
         addObject(hero, 150, 800);
 
-        //addObject(new Enemy(), 1170, 410);
+        addObject(new Enemy(),5555,613);
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -77,6 +77,8 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
+        checkpoint cp=new checkpoint();
+        addObject(cp,3547,686);
         gemBlue gemBlue1 = new gemBlue();
         addObject(gemBlue1,462,853);
         
