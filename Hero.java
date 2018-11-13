@@ -10,6 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int gem;
 
     public Hero() {
         super();
@@ -22,7 +23,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        getGemBlue();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -39,15 +40,24 @@ public class Hero extends Mover {
         }
     }
 
+    public int getGemBlue()
+    {
+    if(isTouching(gemBlue.class))    
+    {
+    removeTouching(gemBlue.class); 
+    gem++;
+    }  
+    return gem;
+    }
     public void handleInput() {
         if (Greenfoot.isKeyDown("Up")) {
             velocityY = -10;
         }
 
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -2;
+            velocityX = -6;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 2;
+            velocityX = 6;
         }
     }
 
