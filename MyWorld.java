@@ -77,7 +77,47 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
-        gemBlue gemBlue = new gemBlue();
-        addObject(gemBlue,462,853);
+        gemBlue gemBlue1 = new gemBlue();
+        addObject(gemBlue1,462,853);
+        
+        gemBlue gemBlue2 = new gemBlue();
+        addObject(gemBlue2,1221,613);
+        
+        gemBlue gemBlue3 = new gemBlue();
+        addObject(gemBlue3,1422,613);
+        
+        gemBlue gemBlue4 = new gemBlue();
+        addObject(gemBlue4,1667,613);
+        
+        gemBlue gemBlue5 = new gemBlue();
+        addObject(gemBlue5,2495,973);
+        
+        gemBlue gemBlue6 = new gemBlue();
+        addObject(gemBlue6,2669,973);
+        
+        gemBlue gemBlue7 = new gemBlue();
+        addObject(gemBlue7,2856,973);
+        
+        gemBlue gemBlue8 = new gemBlue();
+        addObject(gemBlue8,3023,973);
+        
+        gemBlue gemBlue9 = new gemBlue();
+        addObject(gemBlue9,3817,553);
+        
+        gemBlue gemBlue10 = new gemBlue();
+        addObject(gemBlue10,4352,553);
+        
+        gemBlue gemBlue14 = new gemBlue();
+        addObject(gemBlue14,4768,399);
+        
+        gemBlue gemBlue11 = new gemBlue();
+        addObject(gemBlue3,4771,409);
+        
+        gemBlue gemBlue12 = new gemBlue();
+        addObject(gemBlue12,4956,533);
+        
+        gemBlue gemBlue13 = new gemBlue();
+        addObject(gemBlue13,5367,399);
+        
     }
 }
