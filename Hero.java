@@ -24,6 +24,7 @@ public class Hero extends Mover {
     public void act() {
         handleInput();
         getGemBlue();
+        getPositie();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -39,7 +40,11 @@ public class Hero extends Mover {
             }
         }
     }
-
+    public String getPositie()
+    {
+    String positiexy= "X"+this.getX() +"y:"+this.getY(); 
+    return positiexy;
+    }
     public int getGemBlue()
     {
     if(isTouching(gemBlue.class))    
