@@ -28,7 +28,13 @@ public class Tile extends Actor {
         _id = id;
         id++;
     }
-
+    public void act()
+    {
+    if("grassMid.png"!=null) 
+    {
+        
+    }    
+}
     @Override
     public String toString() {
         return "id: " + _id + "\n"
