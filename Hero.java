@@ -12,8 +12,9 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private static int gem;
-    private static int x= 300;
-    private static int y=200; 
+    public static int x= 300;
+    public static int y=200; 
+    boolean inAir=true;
 
     public Hero() {
         super();
@@ -26,6 +27,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
+        touchingLava();
         getGemBlue();
         getPositie();
         checkpointVlag();
@@ -42,14 +44,27 @@ public class Hero extends Mover {
                 setLocation(x,y);
                 break;
             }
-        }
+             }
+          
+            if(((Door.class != null) && gem == 13))
+            {  
+                Greenfoot.setWorld(new MyWorld2());
+                String actieveWereld="MyWorld2";
+               
+            }
+       
+       
+    }
+    public void touchingLava()
+    {
+       
     }
     public void checkpointVlag()
     {
-    if(isTouching(checkpoint.class))    
+    if(isTouching(Checkpoint.class))    
     {
-    this.x=3547;
-    y=673;
+    this.x=getX();
+    this.y=getY();
     }
     }
     
@@ -69,10 +84,13 @@ public class Hero extends Mover {
     return gem;
     }
     public void handleInput() {
+        for (Actor Hero: getIntersectingObjects(Tile.class)){
         if (Greenfoot.isKeyDown("Up")) {
-            velocityY = -10;
+            inAir=true;
+            velocityY = -15;
+  
         }
-
+    }
         if (Greenfoot.isKeyDown("Left")) {
             velocityX = -6;
         } else if (Greenfoot.isKeyDown("Right")) {
