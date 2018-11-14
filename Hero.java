@@ -11,7 +11,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private static int gem;
+    public  int gem=0;
     public static int x= 300;
     public static int y=200; 
     boolean inAir=true;
@@ -27,8 +27,9 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        touchingLava();
         getGemBlue();
+        level2();
+   
         getPositie();
         checkpointVlag();
         velocityX *= drag;
@@ -38,26 +39,33 @@ public class Hero extends Mover {
         }
         applyVelocity();
 
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
+        //for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+           // if (enemy != null) {
                 //getWorld().removeObject(this);
-                setLocation(x,y);
-                break;
-            }
-             }
+                //setLocation(x,y);
+                //break;
+           // }
+            // }
           
-            if(((Door.class != null) && gem == 13))
+            
+       
+      
+    }
+    public boolean level2()
+    {
+    boolean b=false;
+    for(Actor door:getIntersectingObjects(Door.class)) 
+       {
+        if(((door!=null)) && (gem == 13))
             {  
                 Greenfoot.setWorld(new MyWorld2());
-                String actieveWereld="MyWorld2";
-               
-            }
-       
-       
-    }
-    public void touchingLava()
-    {
-       
+                String actieveWereld="MyWorld2";   
+                b=true;
+                break;
+            }   
+            
+        }  
+   return b;      
     }
     public void checkpointVlag()
     {
@@ -85,11 +93,12 @@ public class Hero extends Mover {
     }
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
-        if (Greenfoot.isKeyDown("Up")) {
+        if (Greenfoot.isKeyDown("Space")) {
             inAir=true;
-            velocityY = -15;
+            velocityY = -14;
   
         }
+        else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
             velocityX = -6;

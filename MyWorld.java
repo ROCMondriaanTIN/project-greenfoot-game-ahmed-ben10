@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World {
 
     private CollisionEngine ce;
-
+    public String actieveWereld="MyWorld1";
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -52,11 +52,11 @@ public class MyWorld extends World {
     
        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-
+        int x=2;
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
-        addObject(hero, 150, 800);
-       //showText("CHASE", 200, 200);**************
+        addObject(hero, 144, 913);
+        showText("Ahmed", 100, 100);
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -126,6 +126,6 @@ public class MyWorld extends World {
         addObject(lava,86,995);
 
         Door door = new Door();
-        addObject(door,5949,673);
+        addObject(door,5949,679);
     }
 }
