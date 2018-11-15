@@ -15,6 +15,7 @@ public class Hero extends Mover {
     public  int x= 159;
     public  int y=913; 
     boolean inAir=true;
+    boolean key=false;
 
     public Hero() {
         super();
@@ -28,7 +29,10 @@ public class Hero extends Mover {
     public void act() {
         handleInput();
         getGemBlue();
+        key();
+        touchingSchatkist();
         level2();
+        removeBadGuy();
         // getPositie();
         checkpointVlag();
         velocityX *= drag;
@@ -37,17 +41,9 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-
-        //for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-           // if (enemy != null) {
-                //getWorld().removeObject(this);
-                //setLocation(x,y);
-                //break;
-           // }
-            // }
+        
           for (Actor lavaTile : getObjectsInRange(84, LavaTile.class)) {
             if (lavaTile != null && lavaTile instanceof LavaTile ) {
-               // getWorld().removeObject(this);
                 setLocation(x,y);
                 break;
             }
@@ -56,29 +52,61 @@ public class Hero extends Mover {
        
       
     }
-    public boolean level2()
+    
+    public void touchingSchatkist()
     {
-    boolean b=false;
+        if(isTouching(Schatkist.class)) 
+        {
+            removeTouching(Schatkist.class);
+        }
+    }
+    public void removeBadGuy()
+    {
+        if(isTouching(BadGuy.class)) 
+        {
+            removeTouching(BadGuy.class);  
+            this.getWorld().addObject(new Schatkist(),5809,673);
+            return;
+        }
+    }
+    
+    public void level2()
+    {
+    
     for(Actor door:getIntersectingObjects(Door.class)) 
        {
-        if(((door!=null)) && (gem == 13))
+        if(key==true)
+        {   
+            if(door!=null)
             {  
-                Greenfoot.setWorld(new MyWorld2());
-                String actieveWereld="MyWorld2";   
-                b=true;
-                break;
-            }   
-            
+                
+                  if(gem == 13)
+                 {
+                   
+                   if(BadGuy.class !=null)
+                   {
+                       if(Schatkist.class!=null)
+                       {
+                       Greenfoot.setWorld(new MyWorld2());
+                       String actieveWereld="MyWorld2";  
+                       return;
+                    }
+                   }
+                 } 
+             }
+                 
+        }
+        break;    
         }  
-   return b;      
+                
     }
     public void checkpointVlag()
     {
-    if(isTouching(Checkpoint.class))    
-    {
-    x=getX();
-    y=getY();
-    }
+        if(isTouching(Checkpoint.class))    
+        {
+            x=getX();
+            y=getY();
+        }
     }
     
     public String getPositie()
@@ -89,13 +117,25 @@ public class Hero extends Mover {
     
     public int getGemBlue()
     {
-    if(isTouching(gemBlue.class))    
-    {
-    removeTouching(gemBlue.class); 
-    gem++;
-    }  
-    return gem;
+        if(isTouching(gemBlue.class))    
+        {
+        removeTouching(gemBlue.class); 
+        gem++;
+        }  
+        return gem;
     }
+    
+    public boolean key()
+    {
+    
+    if(isTouching(Key.class))    
+        {
+        removeTouching(Key.class);
+        key=true;
+        }  
+        return key;
+    }
+    
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
         if (Greenfoot.isKeyDown("Up")) {

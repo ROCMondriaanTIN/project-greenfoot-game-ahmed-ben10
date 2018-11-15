@@ -55,9 +55,9 @@ public class MyWorld extends World {
         int x=2;
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
-        addObject(hero, 159, 913);
+        addObject(hero, 159,913);
         showText("Ahmed", 100, 100);
-        addObject(new Enemy(),5555,613);
+        //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -80,6 +80,7 @@ public class MyWorld extends World {
     {
         Checkpoint cp=new Checkpoint();
         addObject(cp,3547,686);
+
         gemBlue gemBlue1 = new gemBlue();
         addObject(gemBlue1,462,853);
 
@@ -123,10 +124,15 @@ public class MyWorld extends World {
         addObject(gemBlue13,5367,399);
 
         Door door = new Door();
-        addObject(door,5949,679);
+        addObject(door,5949,684);
 
-        
-        BadGuy badGuy2 = new BadGuy();
-        addObject(badGuy2,714,368);
+        doorTop doorTop = new doorTop();
+        addObject(doorTop,5949,618);
+
+        Key key1 = new Key();
+        addObject(key1,4657,433);
+
+        BadGuy badGuy = new BadGuy();
+        addObject(badGuy,657,386);
     }
 }

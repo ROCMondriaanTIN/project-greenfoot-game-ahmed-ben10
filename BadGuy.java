@@ -14,16 +14,22 @@ public class BadGuy extends Mover
      */
     public void act() 
     {
+        //String getPositie();
         
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int gem = myHero.gem;
-        
-        
+       
         if(gem==13)
         {
         applyVelocity();  
-        setLocation(5367,399);
+        setLocation(5508,394);
+        
         }
-    }    
+    } 
+    public String getPositie()
+    {
+    String positiexy= "X"+this.getX() +"y:"+this.getY(); 
+    return positiexy;
+    }
 }
