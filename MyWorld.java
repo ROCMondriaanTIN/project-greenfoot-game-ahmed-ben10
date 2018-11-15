@@ -56,7 +56,7 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
-        showText("Ahmed", 100, 100);
+        showText("Level 1", 100, 100);
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -133,6 +133,6 @@ public class MyWorld extends World {
         addObject(key1,4657,433);
 
         BadGuy badGuy = new BadGuy();
-        addObject(badGuy,657,386);
+        addObject(badGuy,657,186);
     }
 }

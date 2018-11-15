@@ -1,3 +1,5 @@
+
+
 //
 
 import greenfoot.*;
@@ -13,7 +15,8 @@ public class Hero extends Mover {
     private final double drag;
     public  int gem=0;
     public  int x= 159;
-    public  int y=913; 
+    public  int y=913;
+    private int frame =1;
     boolean inAir=true;
     boolean key=false;
 
@@ -142,21 +145,86 @@ public class Hero extends Mover {
     
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
-        if (Greenfoot.isKeyDown("Up")) {
+        if (Greenfoot.isKeyDown("Space")) {
             inAir=true;
-            velocityY = -17;
+            velocityY = -14;
   
         }
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -9;
+            velocityX = -6;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 9;
+            velocityX = 6;
+            frames();
         }
     }
 
-    public int getWidth() 
+public void frames()
+{
+		
+		if(frame==1)
+		{
+		setImage("p1_walk01.png");
+
+		}
+		if(frame==2)
+		{
+		setImage("p1_walk02.png");
+		}
+		if(frame==3)
+		{
+		setImage("p1_walk03.png");
+		}
+		
+		if(frame==4)
+		{
+		setImage("p1_walk04.png");
+		
+		}
+
+		if(frame==5)
+		{
+		setImage("p1_walk05.png");
+		
+		}
+		if(frame==6)
+		{
+		setImage("p1_walk06.png");
+		
+		}
+		if(frame==7)
+		{
+		setImage("p1_walk07.png");
+		
+		}
+		
+		if(frame==8)
+		{
+		setImage("p1_walk08.png");
+		}
+		
+		if(frame==9)
+		{
+		setImage("p1_walk09.png");
+		
+		}
+		
+		if(frame==10)
+		{
+		setImage("p1_walk10.png");
+		}
+		
+		if(frame==11)
+		{
+		setImage("p1_walk11.png");
+		frame=1;
+		return ;
+		}
+		frame++;
+}	
+
+ public int getWidth() 
     {
         return getImage().getWidth();
     }
@@ -165,3 +233,6 @@ public class Hero extends Mover {
         return getImage().getHeight();
     }
 }
+
+
+   
