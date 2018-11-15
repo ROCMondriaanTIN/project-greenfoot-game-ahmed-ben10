@@ -55,9 +55,13 @@ public class Hero extends Mover {
     
     public void touchingSchatkist()
     {
-        if(isTouching(Schatkist.class)) 
+        if(key==true)
         {
-            removeTouching(Schatkist.class);
+            if(isTouching(Schatkist.class)) 
+            {
+                removeTouching(Schatkist.class);
+                return;
+            }
         }
     }
     public void removeBadGuy()
@@ -146,9 +150,9 @@ public class Hero extends Mover {
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -6;
+            velocityX = -9;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 6;
+            velocityX = 9;
         }
     }
 
