@@ -1,4 +1,4 @@
-
+//
 
 import greenfoot.*;
 
@@ -12,8 +12,8 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     public  int gem=0;
-    public static int x= 300;
-    public static int y=200; 
+    public  int x= 159;
+    public  int y=913; 
     boolean inAir=true;
 
     public Hero() {
@@ -29,8 +29,7 @@ public class Hero extends Mover {
         handleInput();
         getGemBlue();
         level2();
-   
-        getPositie();
+        // getPositie();
         checkpointVlag();
         velocityX *= drag;
         velocityY += acc;
@@ -46,7 +45,13 @@ public class Hero extends Mover {
                 //break;
            // }
             // }
-          
+          for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
+            if (lavaTile != null && lavaTile instanceof LavaTile ) {
+               // getWorld().removeObject(this);
+                setLocation(x,y);
+                break;
+            }
+            }
             
        
       
@@ -71,8 +76,8 @@ public class Hero extends Mover {
     {
     if(isTouching(Checkpoint.class))    
     {
-    this.x=getX();
-    this.y=getY();
+    x=getX();
+    y=getY();
     }
     }
     
@@ -93,9 +98,9 @@ public class Hero extends Mover {
     }
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
-        if (Greenfoot.isKeyDown("Space")) {
+        if (Greenfoot.isKeyDown("Up")) {
             inAir=true;
-            velocityY = -14;
+            velocityY = -17;
   
         }
         else inAir=false;

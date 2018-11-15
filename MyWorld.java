@@ -55,7 +55,7 @@ public class MyWorld extends World {
         int x=2;
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
-        addObject(hero, 144, 913);
+        addObject(hero, 159, 913);
         showText("Ahmed", 100, 100);
         //addObject(new Enemy(),5555,613);
        
@@ -122,8 +122,7 @@ public class MyWorld extends World {
         gemBlue gemBlue13 = new gemBlue();
         addObject(gemBlue13,5367,399);
 
-        Lava2 lava = new Lava2();
-        addObject(lava,86,995);
+    
 
         Door door = new Door();
         addObject(door,5949,679);
