@@ -49,7 +49,7 @@ public class MyWorld extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
-    
+        
        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
         int x=2;
@@ -57,7 +57,7 @@ public class MyWorld extends World {
         addObject(camera, 150, 800);
         addObject(hero, 159, 913);
         showText("Ahmed", 100, 100);
-        //addObject(new Enemy(),5555,613);
+        addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -122,9 +122,11 @@ public class MyWorld extends World {
         gemBlue gemBlue13 = new gemBlue();
         addObject(gemBlue13,5367,399);
 
-    
-
         Door door = new Door();
         addObject(door,5949,679);
+
+        
+        BadGuy badGuy2 = new BadGuy();
+        addObject(badGuy2,714,368);
     }
 }

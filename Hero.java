@@ -45,7 +45,7 @@ public class Hero extends Mover {
                 //break;
            // }
             // }
-          for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
+          for (Actor lavaTile : getObjectsInRange(84, LavaTile.class)) {
             if (lavaTile != null && lavaTile instanceof LavaTile ) {
                // getWorld().removeObject(this);
                 setLocation(x,y);

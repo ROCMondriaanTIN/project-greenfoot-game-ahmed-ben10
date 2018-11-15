@@ -23,6 +23,7 @@ public class Mover extends Actor {
      *
      * @param camera A Camera class
      */
+    
     public void setCamera(Camera camera) {
         this.camera = camera;
         hasCamera = true;
