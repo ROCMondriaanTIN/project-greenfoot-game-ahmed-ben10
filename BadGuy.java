@@ -19,21 +19,18 @@ public class BadGuy extends Mover
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int gem = myHero.gem;
-        for (Actor Hero: getIntersectingObjects(Tile.class))
-        {
-        velocityX = 6;  
-        velocityY=0;
-        applyVelocity(); 
+      
+        
         
        
         if(gem==13)
         {
-         
+        applyVelocity();  
         setLocation(5508,394);
         
         }
     } 
-}
+
     public String getPositie()
     {
     String positiexy= "X"+this.getX() +"y:"+this.getY(); 

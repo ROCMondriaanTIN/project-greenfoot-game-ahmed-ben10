@@ -31,6 +31,8 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
+        lava();
+        spikes();
         getGemBlue();
         key();
         touchingSchatkist();
@@ -44,17 +46,28 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-        
-          for (Actor lavaTile : getObjectsInRange(84, LavaTile.class)) {
+    }
+            public void lava()
+            {
+            for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
             if (lavaTile != null && lavaTile instanceof LavaTile ) {
+               // getWorld().removeObject(this);
                 setLocation(x,y);
                 break;
             }
             }
-            
+        }
+    
+            public void spikes()
+            {
+             for (Actor SpikesTile : getObjectsInRange(69, SpikesTile.class)) {
+            if (SpikesTile != null && SpikesTile instanceof SpikesTile ) {
+                setLocation(x,y);
+                break;
+            }
+            }
+        }
        
-      
-    }
     
     public void touchingSchatkist()
     {
@@ -80,32 +93,32 @@ public class Hero extends Mover {
     public void level2()
     {
     
-    for(Actor door:getIntersectingObjects(Door.class)) 
-       {
-        if(key==true)
-        {   
-            if(door!=null)
-            {  
-                
-                  if(gem == 13)
-                 {
-                   
-                   if(BadGuy.class !=null)
-                   {
-                       if(Schatkist.class!=null)
-                       {
-                       Greenfoot.setWorld(new MyWorld2());
-                       String actieveWereld="MyWorld2";  
-                       return;
-                    }
-                   }
-                 } 
-             }
+      for(Actor door:getIntersectingObjects(Door.class)) 
+        {
+         if(key==true)
+         {   
+             if(door!=null)
+             {  
                  
-        }
-        break;    
-        }  
-                
+                   if(gem == 13)
+                  {
+                    
+                    if(BadGuy.class !=null)
+                    {
+                        if(Schatkist.class!=null)
+                        {
+                        Greenfoot.setWorld(new MyWorld2());
+                        String actieveWereld="MyWorld2";  
+                        return;
+                     }
+                    }
+                  } 
+              }
+                  
+         }
+         break;    
+         }  
+              
     }
     public void checkpointVlag()
     {
@@ -124,9 +137,9 @@ public class Hero extends Mover {
     
     public int getGemBlue()
     {
-        if(isTouching(gemBlue.class))    
+        if(isTouching(gemBlueTile.class))    
         {
-        removeTouching(gemBlue.class); 
+        removeTouching(gemBlueTile.class); 
         gem++;
         }  
         return gem;
@@ -147,7 +160,7 @@ public class Hero extends Mover {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
         if (Greenfoot.isKeyDown("Space")) {
             inAir=true;
-            velocityY = -14;
+            velocityY = -18;
   
         }
         else inAir=false;
@@ -162,67 +175,67 @@ public class Hero extends Mover {
 
 public void frames()
 {
-		
-		if(frame==1)
-		{
-		setImage("p1_walk01.png");
+        
+        if(frame==1)
+        {
+        setImage("p1_walk01.png");
 
-		}
-		if(frame==2)
-		{
-		setImage("p1_walk02.png");
-		}
-		if(frame==3)
-		{
-		setImage("p1_walk03.png");
-		}
-		
-		if(frame==4)
-		{
-		setImage("p1_walk04.png");
-		
-		}
+        }
+        if(frame==2)
+        {
+        setImage("p1_walk02.png");
+        }
+        if(frame==3)
+        {
+        setImage("p1_walk03.png");
+        }
+        
+        if(frame==4)
+        {
+        setImage("p1_walk04.png");
+        
+        }
 
-		if(frame==5)
-		{
-		setImage("p1_walk05.png");
-		
-		}
-		if(frame==6)
-		{
-		setImage("p1_walk06.png");
-		
-		}
-		if(frame==7)
-		{
-		setImage("p1_walk07.png");
-		
-		}
-		
-		if(frame==8)
-		{
-		setImage("p1_walk08.png");
-		}
-		
-		if(frame==9)
-		{
-		setImage("p1_walk09.png");
-		
-		}
-		
-		if(frame==10)
-		{
-		setImage("p1_walk10.png");
-		}
-		
-		if(frame==11)
-		{
-		setImage("p1_walk11.png");
-		frame=1;
-		return ;
-		}
-		frame++;
-}	
+        if(frame==5)
+        {
+        setImage("p1_walk05.png");
+        
+        }
+        if(frame==6)
+        {
+        setImage("p1_walk06.png");
+        
+        }
+        if(frame==7)
+        {
+        setImage("p1_walk07.png");
+        
+        }
+        
+        if(frame==8)
+        {
+        setImage("p1_walk08.png");
+        }
+        
+        if(frame==9)
+        {
+        setImage("p1_walk09.png");
+        
+        }
+        
+        if(frame==10)
+        {
+        setImage("p1_walk10.png");
+        }
+        
+        if(frame==11)
+        {
+        setImage("p1_walk11.png");
+        frame=1;
+        return ;
+        }
+        frame++;
+}   
 
  public int getWidth() 
     {

@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Checkpoint extends Mover
 {
-    public Checkpoint()
-    {
-    setImage("flagBlue.png");    
-    }
     public void act() 
     {
         applyVelocity();
