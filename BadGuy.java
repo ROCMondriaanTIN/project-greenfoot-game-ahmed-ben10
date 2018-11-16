@@ -26,7 +26,7 @@ public class BadGuy extends Mover
         if(gem==13)
         {
         applyVelocity();  
-        setLocation(5508,394);
+        setLocation(5508,400);
         
         }
     } 

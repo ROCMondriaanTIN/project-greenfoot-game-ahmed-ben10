@@ -151,7 +151,7 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
             case 36:
-                tile = new Tile("bomb.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BombTile("bomb.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = false;
                 break;
             default:

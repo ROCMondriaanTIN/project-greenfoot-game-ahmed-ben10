@@ -33,6 +33,7 @@ public class Hero extends Mover {
         handleInput();
         lava();
         spikes();
+        bomb();
         getGemBlue();
         key();
         touchingSchatkist();
@@ -60,7 +61,7 @@ public class Hero extends Mover {
     
             public void spikes()
             {
-             for (Actor SpikesTile : getObjectsInRange(69, SpikesTile.class)) {
+             for (Actor SpikesTile : getObjectsInRange(50, SpikesTile.class)) {
             if (SpikesTile != null && SpikesTile instanceof SpikesTile ) {
                 setLocation(x,y);
                 break;
@@ -68,6 +69,15 @@ public class Hero extends Mover {
             }
         }
        
+         public void bomb()
+            {
+             for (Actor BombTile : getObjectsInRange(50, BombTile.class)) {
+            if (BombTile != null && BombTile instanceof BombTile ) {
+                setLocation(x,y);
+                break;
+            }
+            }
+        }
     
     public void touchingSchatkist()
     {
@@ -160,7 +170,7 @@ public class Hero extends Mover {
         for (Actor Hero: getIntersectingObjects(Tile.class)){
         if (Greenfoot.isKeyDown("Space")) {
             inAir=true;
-            velocityY = -18;
+            velocityY = -13;
   
         }
         else inAir=false;
