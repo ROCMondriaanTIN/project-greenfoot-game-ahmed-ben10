@@ -53,7 +53,7 @@ public class MyWorld extends World {
         
        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-        int x=2;
+        
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 159,913);

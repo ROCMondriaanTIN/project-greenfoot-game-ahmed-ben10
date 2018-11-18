@@ -86,6 +86,12 @@ public class MyWorld2 extends World {
         doorTop doorTop = new doorTop();
         addObject(doorTop,105,553);
 
+        Door door2 = new Door();
+        addObject(door2,5884,613);
+
+        doorTop doorTop2 = new doorTop();
+        addObject(doorTop2,5884,543);
+        
         Checkpoint checkpoint = new Checkpoint();
         addObject(checkpoint,198,625);
 
@@ -93,5 +99,5 @@ public class MyWorld2 extends World {
         addObject(checkpoint2,3268,625);
         Level1Button level1Button = new Level1Button();
         addObject(level1Button,105,523);
-    }
+    }//5884,613
 }

@@ -167,10 +167,10 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        for (Actor Hero: getIntersectingObjects(Tile.class)){
-        if (Greenfoot.isKeyDown("Space")) {
+        for (Actor Hero: getIntersectingObjects(JumpTile.class)){
+       if (Greenfoot.isKeyDown("Space")) {
             inAir=true;
-            velocityY = -13;
+            velocityY = -15;
   
         }
         else inAir=false;
