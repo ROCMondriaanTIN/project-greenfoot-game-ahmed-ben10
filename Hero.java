@@ -19,6 +19,7 @@ public class Hero extends Mover {
     private int frame =1;
     boolean inAir=true;
     boolean key=false;
+    boolean level2=false;
 
     public Hero() {
         super();
@@ -107,7 +108,7 @@ public class Hero extends Mover {
         {
          if(key==true)
          {   
-             if(door!=null)
+             if(Door.class!=null)
              {  
                  
                    if(gem == 13)
@@ -128,8 +129,38 @@ public class Hero extends Mover {
          }
          break;    
          }  
-              
-    }
+         //Deur van level2 naar Level 3
+         for(Actor door:getIntersectingObjects(Door.class)) 
+        {
+         {
+         if(key==true)
+         {   
+             if(Door.class!=null)
+             {  
+                 
+                   if(gem == 18)
+                  {
+                    
+                    //if(BadGuy.class !=null)
+                    //{
+                        ///if(Schatkist.class!=null)
+                        //{
+                        Greenfoot.setWorld(new MyWorld3());
+                        String actieveWereld="MyWorld3";  
+                        boolean level2=true;
+                        return;
+                     //}
+                    //}
+                  } 
+              }
+                  
+         }
+           
+         }    
+         }
+        }
+         
+   
     public void checkpointVlag()
     {
         if(isTouching(Checkpoint.class))    
@@ -168,7 +199,7 @@ public class Hero extends Mover {
     
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(JumpTile.class)){
-       if (Greenfoot.isKeyDown("Space")) {
+       if (Greenfoot.isKeyDown("UP")) {
             inAir=true;
             velocityY = -15;
   

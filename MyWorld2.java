@@ -87,16 +87,23 @@ public class MyWorld2 extends World {
         addObject(doorTop,105,553);
 
         Door door2 = new Door();
-        addObject(door2,5884,613);
+        addObject(door2,5884,624);
 
         doorTop doorTop2 = new doorTop();
-        addObject(doorTop2,5884,543);
+        addObject(doorTop2,5884,554);
+        
+        Key key1 = new Key();
+        addObject(key1,4525,493);
+        
+        Checkpoint checkpoint2 = new Checkpoint();
+        addObject(checkpoint2,2071,625);
         
         Checkpoint checkpoint = new Checkpoint();
         addObject(checkpoint,198,625);
 
-        Checkpoint checkpoint2 = new Checkpoint();
-        addObject(checkpoint2,3268,625);
+        //Checkpoint checkpoint3 = new Checkpoint();
+        //addObject(checkpoint3,3268,625);
+        
         Level1Button level1Button = new Level1Button();
         addObject(level1Button,105,523);
     }//5884,613

@@ -98,7 +98,7 @@ public class MyWorld extends World {
         addObject(key1,4657,433);
 
         BadGuy badGuy = new BadGuy();
-        addObject(badGuy,657,249);
+        addObject(badGuy,159,400);
         
         Level2Button level2Button = new Level2Button();
         addObject(level2Button,159,553);
