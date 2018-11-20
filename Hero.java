@@ -20,6 +20,8 @@ public class Hero extends Mover {
     boolean inAir=true;
     boolean key=false;
     boolean level2=false;
+    boolean schatkist=false;
+    boolean isDood;
 
     public Hero() {
         super();
@@ -31,6 +33,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        isDood=false;
         handleInput();
         lava();
         spikes();
@@ -38,8 +41,8 @@ public class Hero extends Mover {
         getGemBlue();
         key();
         touchingSchatkist();
-        level2();
         removeBadGuy();
+        level2();
         // getPositie();
         checkpointVlag();
         velocityX *= drag;
@@ -49,12 +52,15 @@ public class Hero extends Mover {
         }
         applyVelocity();
     }
+
+   
             public void lava()
             {
             for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
             if (lavaTile != null && lavaTile instanceof LavaTile ) {
                // getWorld().removeObject(this);
                 setLocation(x,y);
+                isDood=true;
                 break;
             }
             }
@@ -65,6 +71,7 @@ public class Hero extends Mover {
              for (Actor SpikesTile : getObjectsInRange(50, SpikesTile.class)) {
             if (SpikesTile != null && SpikesTile instanceof SpikesTile ) {
                 setLocation(x,y);
+                isDood=true;
                 break;
             }
             }
@@ -75,21 +82,24 @@ public class Hero extends Mover {
              for (Actor BombTile : getObjectsInRange(50, BombTile.class)) {
             if (BombTile != null && BombTile instanceof BombTile ) {
                 setLocation(x,y);
+                isDood=true;
                 break;
             }
             }
         }
     
-    public void touchingSchatkist()
+    public boolean touchingSchatkist()
     {
         if(key==true)
         {
             if(isTouching(Schatkist.class)) 
             {
                 removeTouching(Schatkist.class);
-                return;
+                 schatkist=true;
             }
+            
         }
+        return schatkist;
     }
     public void removeBadGuy()
     {
@@ -108,7 +118,7 @@ public class Hero extends Mover {
         {
          if(key==true)
          {   
-             if(Door.class!=null)
+             if(door!=null)
              {  
                  
                    if(gem == 13)
@@ -116,7 +126,7 @@ public class Hero extends Mover {
                     
                     if(BadGuy.class !=null)
                     {
-                        if(Schatkist.class!=null)
+                        if(schatkist==true)
                         {
                         Greenfoot.setWorld(new MyWorld2());
                         String actieveWereld="MyWorld2";  
@@ -130,35 +140,33 @@ public class Hero extends Mover {
          break;    
          }  
          //Deur van level2 naar Level 3
-         for(Actor door:getIntersectingObjects(Door.class)) 
+        for(Actor door:getIntersectingObjects(Door.class)) 
         {
-         {
-         if(key==true)
-         {   
-             if(Door.class!=null)
-             {  
-                 
-                   if(gem == 18)
-                  {
-                    
-                    //if(BadGuy.class !=null)
-                    //{
-                        ///if(Schatkist.class!=null)
-                        //{
-                        Greenfoot.setWorld(new MyWorld3());
-                        String actieveWereld="MyWorld3";  
-                        boolean level2=true;
-                        return;
-                     //}
-                    //}
-                  } 
-              }
-                  
-         }
+             if(key==true)
+             {   
+                 if(door!=null)
+                 {  
+                     
+                       if(gem == 18)
+                      {
+                        
+                        if(BadGuy.class != null)
+                        { 
+                            if(schatkist==true)
+                            {
+                            Greenfoot.setWorld(new MyWorld3());
+                            String actieveWereld="MyWorld3";  
+                            return;
+                           }
+                        }
+                      } 
+                  }
+                      
+             }
            
-         }    
-         }
-        }
+         }   
+      }
+     
          
    
     public void checkpointVlag()
@@ -207,9 +215,9 @@ public class Hero extends Mover {
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -6;
+            velocityX = -6.75;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 6;
+            velocityX = 6.75;
             frames();
         }
     }

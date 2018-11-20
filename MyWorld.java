@@ -1,4 +1,4 @@
-
+import java.util.*;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class MyWorld extends World {
-
+    
     private CollisionEngine ce;
     public String actieveWereld="MyWorld1";
     /**
@@ -57,6 +57,7 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
+       
         showText("Level 1", 100, 100);
         //addObject(new Enemy(),5555,613);
        
@@ -79,6 +80,7 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
+        
         Checkpoint cp=new Checkpoint();
         addObject(cp,3547,686);
         
@@ -98,9 +100,12 @@ public class MyWorld extends World {
         addObject(key1,4657,433);
 
         BadGuy badGuy = new BadGuy();
-        addObject(badGuy,159,400);
+        addObject(badGuy,159,650);
         
         Level2Button level2Button = new Level2Button();
         addObject(level2Button,159,553);
+        
+        GemTeller gt = new GemTeller();
+        addObject(gt, 0,0);
     }
 }

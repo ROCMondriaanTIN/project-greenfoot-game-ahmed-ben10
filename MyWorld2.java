@@ -47,6 +47,7 @@ public class MyWorld2 extends World {
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
+        BadGuy badGuy=new BadGuy();
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
@@ -57,6 +58,7 @@ public class MyWorld2 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 110,613);
+        addObject(badGuy,110,400);
         showText("Level 2", 100, 100);
        //showText("CHASE", 200, 200);**************
         //addObject(new Enemy(),5555,613);
