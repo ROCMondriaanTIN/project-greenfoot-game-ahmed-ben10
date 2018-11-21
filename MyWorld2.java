@@ -112,10 +112,10 @@ public class MyWorld2 extends World {
         GemTeller gt = new GemTeller();
         addObject(gt, 0,0);
         
-        Boost boost = new Boost();
+        BoostSnelheid boost = new BoostSnelheid();
         addObject(boost,1896,553);
         
-        Boost boost1 = new Boost();
+        BoostSnelheid boost1 = new BoostSnelheid();
         addObject(boost1,3361,623);
         
     }//5884,613

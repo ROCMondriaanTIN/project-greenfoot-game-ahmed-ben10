@@ -81,7 +81,7 @@ public class MyWorld extends World {
     private void prepare()
     {
 
-        Boost boost1=new Boost();
+        BoostSnelheid boost1=new BoostSnelheid();
         addObject(boost1,4083,673);
         
         Checkpoint cp=new Checkpoint();

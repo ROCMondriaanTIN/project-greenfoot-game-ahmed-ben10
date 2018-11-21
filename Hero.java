@@ -57,9 +57,9 @@ public class Hero extends Mover {
 
             public int boostSnelheid()
             {
-            if(isTouching(Boost.class))    
+            if(isTouching(BoostSnelheid.class))    
             {
-            removeTouching(Boost.class);
+            removeTouching(BoostSnelheid.class);
             snelheid+=3;
             
             }
