@@ -17,6 +17,7 @@ public class Hero extends Mover {
     public  int x= 159;
     public  int y=913;
     private int frame =1;
+    private int snelheid;
     boolean inAir=true;
     boolean key=false;
     boolean level2=false;
@@ -35,6 +36,7 @@ public class Hero extends Mover {
     public void act() {
         isDood=false;
         handleInput();
+        boostSnelheid();
         lava();
         spikes();
         bomb();
@@ -53,7 +55,17 @@ public class Hero extends Mover {
         applyVelocity();
     }
 
-   
+            public int boostSnelheid()
+            {
+            if(isTouching(Boost.class))    
+            {
+            removeTouching(Boost.class);
+            snelheid+=3;
+            
+            }
+            return snelheid;
+            } 
+            
             public void lava()
             {
             for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
@@ -215,9 +227,9 @@ public class Hero extends Mover {
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -6.75;
+            velocityX = -6.75-snelheid;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 6.75;
+            velocityX = 6.75+snelheid;
             frames();
         }
     }

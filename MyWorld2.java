@@ -58,7 +58,7 @@ public class MyWorld2 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 110,613);
-        addObject(badGuy,110,400);
+        addObject(badGuy,369,613);
         showText("Level 2", 100, 100);
        //showText("CHASE", 200, 200);**************
         //addObject(new Enemy(),5555,613);
@@ -93,20 +93,30 @@ public class MyWorld2 extends World {
 
         doorTop doorTop2 = new doorTop();
         addObject(doorTop2,5884,554);
-        
+
         Key key1 = new Key();
         addObject(key1,4525,493);
-        
+
         Checkpoint checkpoint2 = new Checkpoint();
-        addObject(checkpoint2,2071,625);
-        
+        addObject(checkpoint2,3296,623);
+
         Checkpoint checkpoint = new Checkpoint();
         addObject(checkpoint,198,625);
 
         //Checkpoint checkpoint3 = new Checkpoint();
         //addObject(checkpoint3,3268,625);
-        
+
         Level1Button level1Button = new Level1Button();
         addObject(level1Button,105,523);
+
+        GemTeller gt = new GemTeller();
+        addObject(gt, 0,0);
+        
+        Boost boost = new Boost();
+        addObject(boost,1896,553);
+        
+        Boost boost1 = new Boost();
+        addObject(boost1,3361,623);
+        
     }//5884,613
 }

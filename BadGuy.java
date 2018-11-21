@@ -36,13 +36,10 @@ public class BadGuy extends Mover {
         s-=10;
         setLocation(x,s) ;   
         }
-       if(isAtEdge())
-       {
-       Greenfoot.setWorld(new MyWorld()) ;   
-       }
+       
         if(dood)
         {
-         setLocation((xpos+35),(ypos-200));   
+        setLocation((xpos+205),(ypos));   
         }
        
          
@@ -55,10 +52,10 @@ public class BadGuy extends Mover {
         velocityX = 5;
         applyVelocity();
         if (getX() >= xMax) {
-            speed *= -4;
+            speed *= -5;
             x = xMax;          
         } else if (getX() <= xMin) {
-            speed *= -4;
+            speed *= -5;
             x = xMin;
         }
     }

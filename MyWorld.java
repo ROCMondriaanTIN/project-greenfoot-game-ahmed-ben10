@@ -16,7 +16,7 @@ public class MyWorld extends World {
     public MyWorld() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("bg.png");
+       this.setBackground("bg.png");
 
         int [][]map={
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -80,13 +80,16 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
+
+        Boost boost1=new Boost();
+        addObject(boost1,4083,673);
         
         Checkpoint cp=new Checkpoint();
         addObject(cp,3547,686);
-        
+
         Door door = new Door();
         addObject(door,159, 921);
-        
+
         doorTop doorTop = new doorTop();
         addObject(doorTop,159,855);
 
@@ -100,12 +103,14 @@ public class MyWorld extends World {
         addObject(key1,4657,433);
 
         BadGuy badGuy = new BadGuy();
-        addObject(badGuy,159,650);
-        
+        addObject(badGuy,339,913);
+
         Level2Button level2Button = new Level2Button();
         addObject(level2Button,159,553);
-        
+
         GemTeller gt = new GemTeller();
         addObject(gt, 0,0);
+        
+        
     }
 }
