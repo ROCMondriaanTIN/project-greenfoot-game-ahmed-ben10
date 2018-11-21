@@ -28,18 +28,22 @@ public class BadGuy extends Mover {
         int ypos=myHero.y;
         int x= getX();
         int y = getY();
+        int b=0;
         boolean dood=myHero.isDood;
         for(Actor d:getObjectsInRange (50,JumpTile.class))
         {
             
         int s=getY();
         s-=10;
-        setLocation(x,s) ;   
+        setLocation(x,s) ; 
+        b=20;
+        
+        
         }
-       
+        
         if(dood)
         {
-        setLocation((xpos+205),(ypos));   
+        setLocation((xpos+250),(ypos));   
         }
        
          
@@ -52,10 +56,10 @@ public class BadGuy extends Mover {
         velocityX = 5;
         applyVelocity();
         if (getX() >= xMax) {
-            speed *= -5;
+            speed *= -5-b;
             x = xMax;          
         } else if (getX() <= xMin) {
-            speed *= -5;
+            speed *= -5-b;
             x = xMin;
         }
     }

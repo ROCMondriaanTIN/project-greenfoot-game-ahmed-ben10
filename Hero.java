@@ -18,6 +18,7 @@ public class Hero extends Mover {
     public  int y=913;
     private int frame =1;
     private int snelheid;
+    private int springen;
     boolean inAir=true;
     boolean key=false;
     boolean level2=false;
@@ -66,6 +67,16 @@ public class Hero extends Mover {
             return snelheid;
             } 
             
+            public int boostSpringen()
+            {
+            if(isTouching(BoostSpring.class))    
+            {
+            removeTouching(BoostSpring.class);
+            springen+=3;
+            
+            }
+            return springen;
+            }
             public void lava()
             {
             for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
@@ -80,7 +91,7 @@ public class Hero extends Mover {
     
             public void spikes()
             {
-             for (Actor SpikesTile : getObjectsInRange(50, SpikesTile.class)) {
+            for (Actor SpikesTile : getObjectsInRange(50, SpikesTile.class)) {
             if (SpikesTile != null && SpikesTile instanceof SpikesTile ) {
                 setLocation(x,y);
                 isDood=true;
@@ -221,7 +232,7 @@ public class Hero extends Mover {
         for (Actor Hero: getIntersectingObjects(JumpTile.class)){
        if (Greenfoot.isKeyDown("UP")) {
             inAir=true;
-            velocityY = -15;
+            velocityY = -15+springen;
   
         }
         else inAir=false;

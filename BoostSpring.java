@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class checkpoint here.
+ * Write a description of class BoostSpring here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Checkpoint extends Mover
+public class BoostSpring extends Mover
 {
-    public Checkpoint ()
+    public BoostSpring()
     {
-    setImage("flagBlue.png");
+     setImage("");    
     }
     public void act() 
     {
-        applyVelocity();
+    applyVelocity();
     }    
 }
