@@ -39,9 +39,7 @@ public class Hero extends Mover {
         handleInput();
         boostSnelheid();
         boostSpringen();
-        lava();
-        spikes();
-        bomb();
+        doodTile();
         getGemBlue();
         key();
         touchingSchatkist();
@@ -78,10 +76,10 @@ public class Hero extends Mover {
             }
             return springen;
             }
-            public void lava()
+            public void doodTile()
             {
-            for (Actor lavaTile : getObjectsInRange(50, LavaTile.class)) {
-            if (lavaTile != null && lavaTile instanceof LavaTile ) {
+            for (Actor dodelijkeTile : getObjectsInRange(50, DodelijkeTile.class)) {
+            if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
                // getWorld().removeObject(this);
                 setLocation(x,y);
                 isDood=true;
@@ -90,27 +88,6 @@ public class Hero extends Mover {
             }
         }
     
-            public void spikes()
-            {
-            for (Actor SpikesTile : getObjectsInRange(50, SpikesTile.class)) {
-            if (SpikesTile != null && SpikesTile instanceof SpikesTile ) {
-                setLocation(x,y);
-                isDood=true;
-                break;
-            }
-            }
-        }
-       
-         public void bomb()
-            {
-             for (Actor BombTile : getObjectsInRange(50, BombTile.class)) {
-            if (BombTile != null && BombTile instanceof BombTile ) {
-                setLocation(x,y);
-                isDood=true;
-                break;
-            }
-            }
-        }
     
     public boolean touchingSchatkist()
     {

@@ -15,7 +15,7 @@ public class StartScherm extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
         this.setBackground("startGame.png");
-        showText("Tip:probeer  eerst de BadGuy te pakken en pak dan de gems.", 450, 450);
+        showText("Tip:porbeer  eerst de BadGuy te pakken en pak dan de gems.", 490, 450);
         prepare();
     }
 
