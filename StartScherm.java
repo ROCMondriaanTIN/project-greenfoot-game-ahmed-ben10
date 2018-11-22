@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -14,7 +15,7 @@ public class StartScherm extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
         this.setBackground("startGame.png");
-        showText("Ahmed Benhajar", 100, 100);
+        showText("Tip:probeer  eerst de BadGuy te pakken en pak dan de gems.", 450, 450);
         prepare();
     }
 

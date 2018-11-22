@@ -121,5 +121,7 @@ public class MyWorld2 extends World {
         BoostSnelheid boost2 = new BoostSnelheid();
         addObject(boost2,562,613);
         
-    }//562,613
+        BoostSpring boost3 = new BoostSpring();
+        addObject(boost3,3924,493);
+    }//3924,493
 }

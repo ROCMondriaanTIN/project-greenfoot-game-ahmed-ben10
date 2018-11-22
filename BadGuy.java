@@ -1,3 +1,4 @@
+
 import java.util.*;
 import greenfoot.*;
 
@@ -12,6 +13,8 @@ public class BadGuy extends Mover {
     private int xMax;
     private boolean firstAct;
     private double speed=0.75;
+    public boolean klaar=false;
+    public boolean ready=false;
 
     public BadGuy() {
         super();
@@ -30,17 +33,9 @@ public class BadGuy extends Mover {
         int y = getY();
         int b=0;
         boolean dood=myHero.isDood;
-        for(Actor d:getObjectsInRange (50,JumpTile.class))
-        {
-            
-        int s=getY();
-        s-=10;
-        setLocation(x,s) ; 
-        b=20;
-        
-        
-        }
-        
+        boolean ready=false;
+        up(); 
+        down();
         if(dood)
         {
         setLocation((xpos+250),(ypos));   
@@ -56,11 +51,48 @@ public class BadGuy extends Mover {
         velocityX = 5;
         applyVelocity();
         if (getX() >= xMax) {
-            speed *= -5-b;
+            speed *= -5;
             x = xMax;          
         } else if (getX() <= xMin) {
-            speed *= -5-b;
+            speed *= -5;
             x = xMin;
         }
     }
+    public void up()
+        {
+        for(Actor d:getObjectsInRange (70,JumpTile.class))
+        {    
+        int s=getY();
+        s-=10;
+        int x= getX();
+        int y = getY();
+        setLocation(x,s) ; 
+        boolean klaar=true;
+   
+        } 
+        if(klaar)
+        {
+        ready=true;  
+        klaar=false;
+        }
+        }
+        public void down()
+        {
+         if(ready)
+         {        
+        int s=getY();
+        int x= getX();
+        s-=40;
+        setLocation(x,s) ; 
+        ready=false;
+         for(Actor d:getObjectsInRange (70,JumpTile.class))
+        {    
+         s=getY();
+        s+=10;
+         x= getX();
+        setLocation(x,s) ;    
+        }
+        }
+    
+}
 }

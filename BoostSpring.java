@@ -10,7 +10,7 @@ public class BoostSpring extends Mover
 {
     public BoostSpring()
     {
-     setImage("");    
+     setImage("star.png");    
     }
     public void act() 
     {

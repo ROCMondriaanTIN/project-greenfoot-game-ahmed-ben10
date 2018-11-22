@@ -38,6 +38,7 @@ public class Hero extends Mover {
         isDood=false;
         handleInput();
         boostSnelheid();
+        boostSpringen();
         lava();
         spikes();
         bomb();
@@ -72,7 +73,7 @@ public class Hero extends Mover {
             if(isTouching(BoostSpring.class))    
             {
             removeTouching(BoostSpring.class);
-            springen+=3;
+            springen+=5;
             
             }
             return springen;
@@ -232,7 +233,7 @@ public class Hero extends Mover {
         for (Actor Hero: getIntersectingObjects(JumpTile.class)){
        if (Greenfoot.isKeyDown("UP")) {
             inAir=true;
-            velocityY = -15+springen;
+            velocityY = -15-springen;
   
         }
         else inAir=false;
