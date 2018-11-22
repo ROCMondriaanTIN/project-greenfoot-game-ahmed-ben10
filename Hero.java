@@ -107,7 +107,8 @@ public class Hero extends Mover {
         if(isTouching(BadGuy.class)) 
         {
             removeTouching(BadGuy.class);  
-            this.getWorld().addObject(new Schatkist(),5809,673);
+            //this.getWorld().addObject(new Schatkist(),5809,673);
+            this.getWorld().addObject(new Schatkist(),5809,973);
             return;
         }
     }
@@ -165,8 +166,34 @@ public class Hero extends Mover {
                       
              }
            
+         } 
+         for(Actor door:getIntersectingObjects(Door.class)) 
+        {
+             if(key==true)
+             {   
+                 if(door!=null)
+                 {  
+                     
+                       if(gem == 36)
+                      {
+                        
+                        if(BadGuy.class != null)
+                        { 
+                            if(schatkist==true)
+                            {
+                            Greenfoot.setWorld(new MyWorld4());
+                            String actieveWereld="MyWorld4";  
+                            return;
+                           }
+                        }
+                      } 
+                  }
+                      
+             }
+           
          }   
       }
+      
      
          
    
