@@ -48,13 +48,13 @@ public class BadGuy extends Mover {
             xMax = x + walkRange / 2;
         }
 
-        velocityX = 5;
+        velocityX = 4;
         applyVelocity();
         if (getX() >= xMax) {
-            speed *= -5;
+            speed *= -2;
             x = xMax;          
         } else if (getX() <= xMin) {
-            speed *= -5;
+            speed *= -2;
             x = xMin;
         }
     }

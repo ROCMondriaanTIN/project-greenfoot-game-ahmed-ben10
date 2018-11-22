@@ -31,8 +31,8 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
             case 4:
-                tile = new JumpTile("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = true;
+                tile = new Tile("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = false;
                 break;
             case 5:
                 tile = new JumpTile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -176,19 +176,19 @@ public class TileFactory {
                 break;
             case 42:
                 tile = new JumpTile("sandCliffLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 43:
                 tile = new JumpTile("sandCliffLeftAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 44:
                 tile = new JumpTile("sandCliffRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 45:
                 tile = new JumpTile("sandCliffRightAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 46:
                 tile = new JumpTile("sandHalf.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -196,19 +196,19 @@ public class TileFactory {
                 break;
             case 47:
                 tile = new JumpTile("sandHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 48:
                 tile = new JumpTile("sandHillLeft2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 49:
                 tile = new JumpTile("sandHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;
             case 50:
                 tile = new JumpTile("sandHillRight2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = false;
+                tile.isSolid = true;
                 break;   
              case 51:
                 tile = new JumpTile("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

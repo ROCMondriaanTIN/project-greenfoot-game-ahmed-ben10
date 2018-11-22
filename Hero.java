@@ -216,9 +216,9 @@ public class Hero extends Mover {
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
-            velocityX = -6.75-snelheid;
+            velocityX = -6.00-snelheid;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 6.75+snelheid;
+            velocityX = 6.00+snelheid;
             frames();
         }
     }
