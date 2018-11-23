@@ -1,5 +1,6 @@
 
 
+
 //
 
 import greenfoot.*;
@@ -261,19 +262,21 @@ public class Hero extends Mover {
        if (Greenfoot.isKeyDown("UP")) {
             inAir=true;
             velocityY = -15-springen;
+            setImage("p1_jump.png");
   
         }
         else inAir=false;
     }
         if (Greenfoot.isKeyDown("Left")) {
             velocityX = -6.00-snelheid;
+            framesLinks();
         } else if (Greenfoot.isKeyDown("Right")) {
             velocityX = 6.00+snelheid;
-            frames();
+            framesRechts();
         }
     }
 
-public void frames()
+public void framesRechts()
 {
         
         if(frame==1)
@@ -336,7 +339,69 @@ public void frames()
         }
         frame++;
 }   
+        public void framesLinks()
+{
+        
+        if(frame==1)
+        {
+        setImage("p1_links_walk01.png");
 
+        }
+        if(frame==2)
+        {
+        setImage("p1_links_walk02.png");
+        }
+        if(frame==3)
+        {
+        setImage("p1_links_walk03.png");
+        }
+        
+        if(frame==4)
+        {
+        setImage("p1_links_walk04.png");
+        
+        }
+
+        if(frame==5)
+        {
+        setImage("p1_links_walk05.png");
+        
+        }
+        if(frame==6)
+        {
+        setImage("p1_links_walk06.png");
+        
+        }
+        if(frame==7)
+        {
+        setImage("p1_links_walk07.png");
+        
+        }
+        
+        if(frame==8)
+        {
+        setImage("p1_links_walk08.png");
+        }
+        
+        if(frame==9)
+        {
+        setImage("p1_links_walk09.png");
+        
+        }
+        
+        if(frame==10)
+        {
+        setImage("p1_links_walk10.png");
+        }
+        
+        if(frame==11)
+        {
+        setImage("p1_links_walk11.png");
+        frame=1;
+        return ;
+        }
+        frame++;
+}   
  public int getWidth() 
     {
         return getImage().getWidth();
