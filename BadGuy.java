@@ -38,7 +38,7 @@ public class BadGuy extends Mover {
         down();
         if(dood)
         {
-        setLocation((xpos+250),(ypos));   
+        setLocation((xpos+300),(ypos));   
         }
        
          

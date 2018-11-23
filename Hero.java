@@ -17,7 +17,8 @@ public class Hero extends Mover {
     public  int x= 159;
     public  int y=913;
     private int frame =1;
-    private int snelheid;
+    public String worldName="";
+    private double snelheid;
     private int springen;
     boolean inAir=true;
     boolean key=false;
@@ -25,12 +26,13 @@ public class Hero extends Mover {
     boolean schatkist=false;
     boolean isDood;
 
-    public Hero() {
+    public Hero(String worldName) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
+        this.worldName= worldName;
     }
 
     @Override
@@ -55,12 +57,12 @@ public class Hero extends Mover {
         applyVelocity();
     }
 
-            public int boostSnelheid()
+            public double boostSnelheid()
             {
             if(isTouching(BoostSnelheid.class))    
             {
             removeTouching(BoostSnelheid.class);
-            snelheid+=3;
+            snelheid+=0.5;
             
             }
             return snelheid;
@@ -71,7 +73,7 @@ public class Hero extends Mover {
             if(isTouching(BoostSpring.class))    
             {
             removeTouching(BoostSpring.class);
-            springen+=5;
+            springen+=1;
             
             }
             return springen;
@@ -106,9 +108,30 @@ public class Hero extends Mover {
     {
         if(isTouching(BadGuy.class)) 
         {
-            removeTouching(BadGuy.class);  
-            //this.getWorld().addObject(new Schatkist(),5809,673);
-            this.getWorld().addObject(new Schatkist(),5809,973);
+            removeTouching(BadGuy.class); 
+            if(worldName=="MyWorld1")
+            {
+            this.getWorld().addObject(new Schatkist(),5809,686);
+            //this.getWorld().addObject(new Schatkist(),5809,973);
+            }
+            
+            if(worldName=="MyWorld2")
+            {
+            this.getWorld().addObject(new Schatkist(),5671,623);
+            //this.getWorld().addObject(new Schatkist(),5809,973);
+            }
+            
+            if(worldName=="MyWorld3")
+            {
+            this.getWorld().addObject(new Schatkist(),5705,1043);
+            //this.getWorld().addObject(new Schatkist(),5809,973);
+            }
+            
+            if(worldName=="MyWorld4")
+            {
+            this.getWorld().addObject(new Schatkist(),5809,686);
+            //this.getWorld().addObject(new Schatkist(),5809,973);
+            }
             return;
         }
     }
@@ -214,9 +237,9 @@ public class Hero extends Mover {
     
     public int getGemBlue()
     {
-        if(isTouching(gemBlueTile.class))    
+        if(isTouching(GemBlueTile.class))    
         {
-        removeTouching(gemBlueTile.class); 
+        removeTouching(GemBlueTile.class); 
         gem++;
         }  
         return gem;

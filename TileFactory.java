@@ -109,7 +109,7 @@ public class TileFactory {
                 tile.isSolid = false;   
                 break;
             case 26:
-                tile = new gemBlueTile("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new GemBlueTile("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = false;    
                 break; 
                 

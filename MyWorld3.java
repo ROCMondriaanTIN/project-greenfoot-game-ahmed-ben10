@@ -7,6 +7,7 @@
 public class MyWorld3 extends World {
 
     private CollisionEngine ce;
+      public String actieveWereld="MyWorld3";
 
     /**
      * Constructor for objects of class MyWorld.
@@ -49,7 +50,7 @@ public class MyWorld3 extends World {
 
         TileEngine te = new TileEngine(this, 60, 60, map);
         Camera camera = new Camera(te);
-        Hero hero = new Hero();
+        Hero hero = new Hero(actieveWereld);
         
         camera.follow(hero);
         showText("Level 3", 100,100);
@@ -82,7 +83,7 @@ public class MyWorld3 extends World {
         Door door = new Door();
         addObject(door,101,1407);
         
-        doorTop doorTop = new doorTop();
+        DoorTop doorTop = new DoorTop();
         addObject(doorTop,101,1341);
  
         GemTeller gt = new GemTeller();
@@ -97,7 +98,7 @@ public class MyWorld3 extends World {
         Door door2 = new Door();
         addObject(door2,5868,1046);
         
-        doorTop doorTop2 = new doorTop();
+       DoorTop doorTop2 = new DoorTop();
         addObject(doorTop2,5868,980);
     }
 }

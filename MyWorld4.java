@@ -7,6 +7,7 @@
  public class MyWorld4 extends World {
  
      private CollisionEngine ce;
+       public String actieveWereld="MyWorld4";
      
      /**
       * Constructor for objects of class MyWorld.
@@ -38,7 +39,7 @@
  
          TileEngine te = new TileEngine(this, 60, 60, map);
          Camera camera = new Camera(te);
-         Hero hero = new Hero();
+         Hero hero = new Hero(actieveWereld);
  
          camera.follow(hero);
  

@@ -50,7 +50,7 @@ public class MyWorld2 extends World {
         BadGuy badGuy=new BadGuy();
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero( actieveWereld);
     
        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -85,13 +85,13 @@ public class MyWorld2 extends World {
         Door door = new Door();
         addObject(door,105,623);
 
-        doorTop doorTop = new doorTop();
+        DoorTop doorTop = new DoorTop();
         addObject(doorTop,105,553);
 
         Door door2 = new Door();
         addObject(door2,5884,624);
 
-        doorTop doorTop2 = new doorTop();
+        DoorTop doorTop2 = new DoorTop();
         addObject(doorTop2,5884,554);
 
         Key key1 = new Key();
