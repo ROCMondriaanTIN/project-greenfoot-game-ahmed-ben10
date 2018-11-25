@@ -80,6 +80,8 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
+        LevenTeller lt=new LevenTeller();
+        addObject(lt,0,0);
 
         BoostSnelheid boost1=new BoostSnelheid();
         addObject(boost1,4083,673);

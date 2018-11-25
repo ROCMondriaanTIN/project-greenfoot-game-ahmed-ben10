@@ -14,6 +14,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    public int leven=30;
     public  int gem=0;
     public  int x= 159;
     public  int y=913;
@@ -25,7 +26,7 @@ public class Hero extends Mover {
     boolean key=false;
     boolean level2=false;
     boolean schatkist=false;
-    boolean isDood;
+    boolean isDood=false;
 
     public Hero(String worldName) {
         super();
@@ -38,8 +39,13 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        isDood=false;
+       if(isDood)    
+            {isDood=false;
+            leven--;
+            
+            }
         handleInput();
+        levens();
         boostSnelheid();
         boostSpringen();
         doodTile();
@@ -57,7 +63,34 @@ public class Hero extends Mover {
         }
         applyVelocity();
     }
-
+    
+            public int levens()
+            {
+           
+            if(leven==0)
+            {
+            if(worldName=="MyWorld1")
+            {
+            Greenfoot.setWorld(new MyWorld());
+            }
+            if(worldName=="MyWorld2")
+            {
+            Greenfoot.setWorld(new MyWorld2());
+            }
+            if(worldName=="MyWorld3")
+            {
+            Greenfoot.setWorld(new MyWorld3());
+            }
+            if(worldName=="MyWorld4")
+            {
+            Greenfoot.setWorld(new MyWorld4());
+            }
+            }
+            return leven;
+            }
+            
+            
+            
             public double boostSnelheid()
             {
             if(isTouching(BoostSnelheid.class))    
@@ -82,14 +115,15 @@ public class Hero extends Mover {
             public void doodTile()
             {
             for (Actor dodelijkeTile : getObjectsInRange(50, DodelijkeTile.class)) {
-            if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
+            //if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
                // getWorld().removeObject(this);
+               if(isTouching(DodelijkeTile.class))
                 setLocation(x,y);
                 isDood=true;
                 break;
             }
             }
-        }
+        //}
     
     
     public boolean touchingSchatkist()

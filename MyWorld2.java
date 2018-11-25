@@ -82,6 +82,9 @@ public class MyWorld2 extends World {
      */
     private void prepare()
     {
+        LevenTeller lt=new LevenTeller();
+        addObject(lt,0,0);
+         
         Door door = new Door();
         addObject(door,105,623);
 
