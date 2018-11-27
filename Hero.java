@@ -14,7 +14,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    public int leven=30;
+    public int leven=3;
     public  int gem=0;
     public  int x= 159;
     public  int y=913;
@@ -152,7 +152,7 @@ public class Hero extends Mover {
             
             if(worldName=="MyWorld2")
             {
-            this.getWorld().addObject(new Schatkist(),5671,623);
+            this.getWorld().addObject(new Schatkist(),5440,385);
             //this.getWorld().addObject(new Schatkist(),5809,973);
             }
             
@@ -207,7 +207,7 @@ public class Hero extends Mover {
                  if(door!=null)
                  {  
                      
-                       if(gem == 18)
+                       if(gem == 16)
                       {
                         
                         if(BadGuy.class != null)

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class StartScherm here.
  * 
- * @author (your name) 
+ * @author (your name)  
  * @version (a version number or a date)
  */
 public class StartScherm extends World
@@ -14,8 +14,7 @@ public class StartScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
-        this.setBackground("startGame.png");
-        showText("Tip:probeer eerst de BadGuy uit te schakelen en dan pak de gems.", 490, 450);
+        this.setBackground("gameAchtergrond.PNG");
         prepare();
     }
 
@@ -26,6 +25,6 @@ public class StartScherm extends World
     private void prepare()
     {
         Level1Button level1Button = new Level1Button();
-        addObject(level1Button,418,506);
+        addObject(level1Button,686,660);
     }
 }

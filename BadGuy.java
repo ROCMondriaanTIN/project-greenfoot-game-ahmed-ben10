@@ -15,12 +15,14 @@ public class BadGuy extends Mover {
     private double speed=0.75;
     public boolean klaar=false;
     public boolean ready=false;
+    public String actieveWereld="";
 
-    public BadGuy() {
+    public BadGuy(String actieveWereld) {
         super();
         walkRange = 7000;
         firstAct = true;
         speed = 1;
+        this.actieveWereld=actieveWereld;
     }
 
     @Override
@@ -60,39 +62,56 @@ public class BadGuy extends Mover {
     }
     public void up()
         {
-        for(Actor d:getObjectsInRange (70,JumpTile.class))
-        {    
-        int s=getY();
-        s-=10;
-        int x= getX();
-        int y = getY();
-        setLocation(x,s) ; 
-        boolean klaar=true;
-   
-        } 
-        if(klaar)
-        {
-        ready=true;  
-        klaar=false;
-        }
-        }
+            if(actieveWereld=="MyWorld2")
+            {
+                for(Actor d:getObjectsInRange (70,JumpTile.class))
+                    {    
+                    int s=getY();
+                    s-=7;
+                    int x= getX();
+                    int y = getY();
+                    setLocation(x,s) ; 
+                    boolean klaar=true;
+                   }  
+                }
+            else
+            {
+                for(Actor d:getObjectsInRange (70,JumpTile.class))
+                {    
+                int s=getY();
+                s-=10;
+                int x= getX();
+                int y = getY();
+                setLocation(x,s) ; 
+                boolean klaar=true;
+               } 
+            }
+            
+            if(klaar)
+            {
+            ready=true;  
+            klaar=false;
+            }
+    
+    }
         public void down()
         {
-         if(ready)
-         {        
-        int s=getY();
-        int x= getX();
-        s-=40;
-        setLocation(x,s) ; 
-        ready=false;
-         for(Actor d:getObjectsInRange (70,JumpTile.class))
-        {    
-         s=getY();
-        s+=10;
-         x= getX();
-        setLocation(x,s) ;    
-        }
-        }
+             if(ready)
+             {        
+            int s=getY();
+            int x= getX();
+            s-=40;
+            setLocation(x,s) ; 
+            ready=false;
+            
+                 for(Actor d:getObjectsInRange (70,JumpTile.class))
+                {    
+                 s=getY();
+                s+=10;
+                 x= getX();
+                setLocation(x,s) ;    
+                }
+            }
     
 }
 }
