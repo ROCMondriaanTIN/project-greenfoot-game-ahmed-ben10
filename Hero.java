@@ -1,8 +1,3 @@
-
-
-
-//
-
 import greenfoot.*;
 
 /**
@@ -266,7 +261,7 @@ public class Hero extends Mover {
     
     public String getPositie()
     {
-    String positiexy= "X"+this.getX() +"y:"+this.getY(); 
+    String positiexy= "X: "+this.getX() +" Y: "+this.getY(); 
     return positiexy;
     }
     
