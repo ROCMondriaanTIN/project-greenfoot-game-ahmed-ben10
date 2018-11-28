@@ -58,7 +58,7 @@ public class MyWorld3 extends World {
         addObject(camera, 0, 0);
         addObject(hero, 101,1407);
         //addObject(new Enemy(), 400, 200);
-         BadGuy badGuy=new BadGuy(actieveWereld);
+        BadGuy badGuy=new BadGuy(actieveWereld);
         addObject(badGuy,280,1407);
         ce = new CollisionEngine(te, camera);
         ce.addCollidingMover(hero);
@@ -76,7 +76,7 @@ public class MyWorld3 extends World {
      */
     private void prepare()
     {
-          LevenTeller lt=new LevenTeller();
+        LevenTeller lt=new LevenTeller();
         addObject(lt,0,0);
         
        

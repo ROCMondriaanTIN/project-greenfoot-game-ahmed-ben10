@@ -40,6 +40,7 @@ public class Hero extends Mover {
             
             }
         handleInput();
+        veer();
         levens();
         boostSnelheid();
         boostSpringen();
@@ -159,7 +160,7 @@ public class Hero extends Mover {
             
             if(worldName=="MyWorld4")
             {
-            this.getWorld().addObject(new Schatkist(),5809,686);
+            this.getWorld().addObject(new Schatkist(),5987,1285);
             //this.getWorld().addObject(new Schatkist(),5809,973);
             }
             return;
@@ -304,57 +305,66 @@ public class Hero extends Mover {
             framesRechts();
         }
     }
-
-public void framesRechts()
-{
-        
-        if(frame==1)
+    public void veer()
+    {
+        for(Tile tile:getIntersectingObjects(SpringboardUpTile.class))    
         {
-        setImage("p1_walk01.png");
-
-        }
-        if(frame==2)
+            if(tile!=null)
+            {
+                velocityY=-22; 
+            }
+        }    
+    }
+        public void framesRechts()
         {
-        setImage("p1_walk02.png");
-        }
-        if(frame==3)
-        {
-        setImage("p1_walk03.png");
-        }
         
-        if(frame==4)
-        {
-        setImage("p1_walk04.png");
-        
-        }
-
-        if(frame==5)
-        {
-        setImage("p1_walk05.png");
-        
-        }
-        if(frame==6)
-        {
-        setImage("p1_walk06.png");
-        
-        }
-        if(frame==7)
-        {
-        setImage("p1_walk07.png");
-        
-        }
-        
-        if(frame==8)
-        {
-        setImage("p1_walk08.png");
-        }
-        
-        if(frame==9)
-        {
-        setImage("p1_walk09.png");
-        
-        }
-        
+            if(frame==1)
+            {
+            setImage("p1_walk01.png");
+    
+            }
+            if(frame==2)
+            {
+            setImage("p1_walk02.png");
+            }
+            if(frame==3)
+            {
+            setImage("p1_walk03.png");
+            }
+            
+            if(frame==4)
+            {
+            setImage("p1_walk04.png");
+            
+            }
+    
+            if(frame==5)
+            {
+            setImage("p1_walk05.png");
+            
+            }
+            if(frame==6)
+            {
+            setImage("p1_walk06.png");
+            
+            }
+            if(frame==7)
+            {
+            setImage("p1_walk07.png");
+            
+            }
+            
+            if(frame==8)
+            {
+            setImage("p1_walk08.png");
+            }
+            
+            if(frame==9)
+            {
+            setImage("p1_walk09.png");
+            
+            }
+            
         if(frame==10)
         {
         setImage("p1_walk10.png");

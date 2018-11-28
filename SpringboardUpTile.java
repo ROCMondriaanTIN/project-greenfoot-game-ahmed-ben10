@@ -19,12 +19,12 @@ public class SpringboardUpTile extends Tile
                 {
                     if(frames==1)
                     {
-                    setImage("springboardUp.png");    
+                    setImage("springboardDown.png");    
                     }
                    
                     if(frames==2)
                     {
-                    setImage("springboardDown.png");   
+                    setImage("springboardUp.png");   
                     frames=1;
                     return;
                     }
