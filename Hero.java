@@ -44,7 +44,7 @@ public class Hero extends Mover {
         levens();
         boostSnelheid();
         boostSpringen();
-        //doodTile();
+        doodTile();
         getGemBlue();
         key();
         touchingSchatkist();
