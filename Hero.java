@@ -44,7 +44,7 @@ public class Hero extends Mover {
         levens();
         boostSnelheid();
         boostSpringen();
-        doodTile();
+        //doodTile();
         getGemBlue();
         key();
         touchingSchatkist();
@@ -143,25 +143,21 @@ public class Hero extends Mover {
             if(worldName=="MyWorld1")
             {
             this.getWorld().addObject(new Schatkist(),5809,686);
-            //this.getWorld().addObject(new Schatkist(),5809,973);
             }
             
             if(worldName=="MyWorld2")
             {
-            this.getWorld().addObject(new Schatkist(),5440,385);
-            //this.getWorld().addObject(new Schatkist(),5809,973);
+            this.getWorld().addObject(new Schatkist(),5987,1285);
             }
             
             if(worldName=="MyWorld3")
             {
             this.getWorld().addObject(new Schatkist(),5705,1043);
-            //this.getWorld().addObject(new Schatkist(),5809,973);
             }
             
             if(worldName=="MyWorld4")
             {
-            this.getWorld().addObject(new Schatkist(),5987,1285);
-            //this.getWorld().addObject(new Schatkist(),5809,973);
+            this.getWorld().addObject(new Schatkist(),5440,385);    
             }
             return;
         }
@@ -169,8 +165,8 @@ public class Hero extends Mover {
     
     public void level2()
     {
-    
-      for(Actor door:getIntersectingObjects(Door.class)) 
+        //deur van level 1 naar level 2
+        for(Actor door:getIntersectingObjects(Door.class)) 
         {
          if(key==true)
          {   
@@ -203,7 +199,7 @@ public class Hero extends Mover {
                  if(door!=null)
                  {  
                      
-                       if(gem == 16)
+                       if(gem == 22)
                       {
                         
                         if(BadGuy.class != null)
@@ -221,6 +217,7 @@ public class Hero extends Mover {
              }
            
          } 
+         //deur van level 3 naar 4
          for(Actor door:getIntersectingObjects(Door.class)) 
         {
              if(key==true)
@@ -246,8 +243,34 @@ public class Hero extends Mover {
              }
            
          }   
-      }
       
+      // deur van level 4 naar EIND
+      for(Actor door:getIntersectingObjects(Door.class)) 
+        {
+             if(key==true)
+             {   
+                 if(door!=null)
+                 {  
+                     
+                       if(gem == 16)
+                      {
+                        
+                        if(BadGuy.class != null)
+                        { 
+                            if(schatkist==true)
+                            {
+                            //Greenfoot.setWorld(new MyWorld4());
+                            //String actieveWereld="MyWorld4";  
+                            //return;
+                           }
+                        }
+                      } 
+                  }
+                      
+             }
+           
+         }   
+      }
      
          
    
