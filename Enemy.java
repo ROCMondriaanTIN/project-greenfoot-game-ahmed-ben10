@@ -15,11 +15,11 @@ public class Enemy extends Mover {
 
     public Enemy() {
         super();
-        setImage("pokerMad.png");
-        getImage().mirrorHorizontally();
-        walkRange = 140;
+        setImage("stoneHalfMid.png");
+        walkRange = 430;
         firstAct = true;
         speed = 1;
+        
     }
 
     @Override
@@ -38,11 +38,9 @@ public class Enemy extends Mover {
         if (getX() >= xMax) {
             speed *= -1;
             x = xMax;
-            getImage().mirrorHorizontally();
         } else if (getX() <= xMin) {
             speed *= -1;
             x = xMin;
-            getImage().mirrorHorizontally();
         }
     }
 }

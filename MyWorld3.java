@@ -57,11 +57,15 @@ public class MyWorld3 extends World {
         showText("Level 3", 100,100);
         addObject(camera, 0, 0);
         addObject(hero, 101,1407);
+        
         //addObject(new Enemy(), 400, 200);
+        
         BadGuy badGuy=new BadGuy(actieveWereld);
         addObject(badGuy,280,1407);
+        
         ce = new CollisionEngine(te, camera);
         ce.addCollidingMover(hero);
+        
         prepare();
     }
 
@@ -78,8 +82,6 @@ public class MyWorld3 extends World {
     {
         LevenTeller lt=new LevenTeller();
         addObject(lt,0,0);
-        
-       
         
         Key key1 = new Key();
         addObject(key1,1407,253);
@@ -102,7 +104,7 @@ public class MyWorld3 extends World {
         Door door2 = new Door();
         addObject(door2,5868,1046);
         
-       DoorTop doorTop2 = new DoorTop();
+        DoorTop doorTop2 = new DoorTop();
         addObject(doorTop2,5868,980);
     }
 }

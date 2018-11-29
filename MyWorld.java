@@ -90,10 +90,10 @@ public class MyWorld extends World {
         addObject(cp,3547,686);
 
         Door door = new Door();
-        addObject(door,159, 921);
+        addObject(door,159, 923);
 
         DoorTop doorTop = new DoorTop();
-        addObject(doorTop,159,855);
+        addObject(doorTop,159,857);
 
         Door door2 = new Door();
         addObject(door2,5949,684);

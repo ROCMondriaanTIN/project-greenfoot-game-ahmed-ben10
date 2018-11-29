@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class BadGuy extends Mover {
-
+    int frames=1;
     private int walkRange;
     private int xMin;
     private int xMax;
@@ -19,14 +19,31 @@ public class BadGuy extends Mover {
 
     public BadGuy(String actieveWereld) {
         super();
+        setImage("flyFly1.png");
         walkRange = 7000;
         firstAct = true;
         speed = 1;
         this.actieveWereld=actieveWereld;
+ 
     }
 
     @Override
     public void act() {
+        for(Actor hero:getObjectsInRange(10000000, Hero.class))
+        {
+            if(frames==1)
+            {
+                setImage("flyFly1.png");  
+            }
+            
+            if(frames==2)
+            {
+                setImage("flyFly2.png");    
+                frames=1;
+            }
+            frames++;
+    }
+        
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int xpos=myHero.x;
@@ -43,7 +60,7 @@ public class BadGuy extends Mover {
         setLocation((xpos+300),(ypos));   
         }
        
-         
+        
         if (firstAct) {
             firstAct = false;
             xMin = x - walkRange / 2;
@@ -62,7 +79,7 @@ public class BadGuy extends Mover {
     }
     public void up()
         {
-            if(actieveWereld=="MyWorld2")
+            if(actieveWereld=="MyWorld4"||actieveWereld=="MyWorld2")
             {
                 for(Actor d:getObjectsInRange (70,JumpTile.class))
                     {    

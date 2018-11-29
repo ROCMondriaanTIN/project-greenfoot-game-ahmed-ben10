@@ -47,6 +47,7 @@ public class Hero extends Mover {
         doodTile();
         getGemBlue();
         key();
+        platform();
         touchingSchatkist();
         removeBadGuy();
         level2();
@@ -86,7 +87,11 @@ public class Hero extends Mover {
             }
             
             
-            
+            public void platform() {
+                if (isTouching(Enemy.class)) {
+                    velocityY = -1.2;
+                }
+            }
             public double boostSnelheid()
             {
             if(isTouching(BoostSnelheid.class))    
