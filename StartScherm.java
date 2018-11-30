@@ -14,7 +14,7 @@ public class StartScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
-        this.setBackground("gameAchtergrond.PNG");
+        this.setBackground("gameAchtergrond.png");
         prepare();
     }
 
@@ -25,6 +25,6 @@ public class StartScherm extends World
     private void prepare()
     {
         Level1Button level1Button = new Level1Button();
-        addObject(level1Button,686,660);
+        addObject(level1Button,496,650);
     }
 }
