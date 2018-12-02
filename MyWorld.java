@@ -57,7 +57,7 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
-       
+       Greenfoot.playSound("gameSound.wav");
         showText("Level 1", 100, 100);
         //addObject(new Enemy(),5555,613);
        

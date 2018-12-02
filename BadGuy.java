@@ -79,12 +79,12 @@ public class BadGuy extends Mover {
     }
     public void up()
         {
-            if(actieveWereld=="MyWorld4"||actieveWereld=="MyWorld2")
+            if(actieveWereld=="MyWorld2"||actieveWereld=="MyWorld3"||actieveWereld=="MyWorld4")
             {
                 for(Actor d:getObjectsInRange (70,JumpTile.class))
                     {    
                     int s=getY();
-                    s-=7;
+                    s-=6;
                     int x= getX();
                     int y = getY();
                     setLocation(x,s) ; 

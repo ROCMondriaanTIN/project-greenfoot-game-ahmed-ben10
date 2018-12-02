@@ -1,60 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import greenfoot.*;
 
 /**
@@ -356,6 +299,7 @@ public class Hero extends Mover {
         if(isTouching(GemBlueTile.class))    
         {
         removeTouching(GemBlueTile.class); 
+        Greenfoot.playSound("gemSound.wav");
         gem++;
         }  
         return gem;
@@ -377,6 +321,7 @@ public class Hero extends Mover {
        if (Greenfoot.isKeyDown("UP")) {
             inAir=true;
             velocityY = -15-springen;
+            Greenfoot.playSound("jumpSound.wav");
             setImage("p1_jump.png");
   
         }

@@ -60,7 +60,10 @@ public class MyWorld4 extends World {
         addObject(camera, 150, 800);
         addObject(hero, 110,613);
         addObject(badGuy,369,613);
+        
         showText("Level 4", 100, 100);
+        Greenfoot.playSound("gameSound.wav");
+        
        //showText("CHASE", 200, 200);**************
         //addObject(new Enemy(),5555,613);
        

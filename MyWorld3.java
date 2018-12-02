@@ -55,6 +55,8 @@ public class MyWorld3 extends World {
         
         camera.follow(hero);
         showText("Level 3", 100,100);
+        Greenfoot.playSound("gameSound.wav");
+        
         addObject(camera, 0, 0);
         addObject(hero, 101,1407);
         
