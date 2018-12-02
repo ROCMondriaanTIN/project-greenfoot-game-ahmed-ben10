@@ -1,3 +1,5 @@
+
+
  import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  
  /**
@@ -87,6 +89,9 @@
 
          Checkpoint checkpoint= new Checkpoint();
          addObject(checkpoint,190,2244);
+         
+         Checkpoint checkpoint2= new Checkpoint();
+         addObject(checkpoint2,3286,2124);
          
          Door door= new Door();
          addObject(door,109,2244);
