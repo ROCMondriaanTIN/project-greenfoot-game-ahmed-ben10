@@ -49,7 +49,8 @@ public class MyWorld extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero(actieveWereld);
+       
+       Hero hero = new Hero(actieveWereld);
         
        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -57,7 +58,8 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
-       Greenfoot.playSound("gameSound.wav");
+        
+        
         showText("Level 1", 80, 100);
         //addObject(new Enemy(),5555,613);
        

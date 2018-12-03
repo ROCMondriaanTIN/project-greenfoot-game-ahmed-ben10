@@ -77,7 +77,7 @@
          addObject(hero, 109,2244);
          
          showText("Level 2", 80,100);
-         Greenfoot.playSound("gameSound.wav");
+         
          GemTeller gt = new GemTeller(actieveWereld);
          addObject(gt, 105, 75);
          

@@ -17,7 +17,7 @@ public class Level1Button extends Mover
     {
         applyVelocity();
         if(Greenfoot.mouseClicked(this))
-        {
+        { 
         Greenfoot.setWorld(new MyWorld());
         String actieveWereld="MyWorld1";  
         return;    

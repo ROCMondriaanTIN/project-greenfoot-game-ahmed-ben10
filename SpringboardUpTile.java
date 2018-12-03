@@ -13,10 +13,10 @@ public class SpringboardUpTile extends Tile
     
     public void act() 
     {
+       
         for(Actor hero:getIntersectingObjects(Hero.class))
         {
-                if(hero!=null)
-                {
+                
                     if(frames==1)
                     {
                     setImage("springboardDown.png");    
@@ -29,7 +29,7 @@ public class SpringboardUpTile extends Tile
                     return;
                     }
                     frames++;
-                }
+                
     }
     }    
 }

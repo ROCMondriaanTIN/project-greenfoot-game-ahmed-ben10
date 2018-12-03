@@ -14,10 +14,9 @@ public class StartScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
-        this.setBackground("gameAchtergrond.png");
+        this.setBackground("gameAchtergrond.PNG");
         prepare();
-        GreenfootSound gm =new GreenfootSound("gameSound.wav");
-        gm.playLoop();
+        
     }
 
     /**

@@ -22,6 +22,7 @@ public class Hero extends Mover {
     boolean level2=false;
     boolean schatkist=false;
     boolean isDood=false;
+    GreenfootSound gm =new GreenfootSound("gameSound.wav");
 
     public Hero(String worldName) {
         super();
@@ -30,15 +31,18 @@ public class Hero extends Mover {
         drag = 0.8;
         setImage("p1.png");
         this.worldName= worldName;
+         
     }
 
     @Override
     public void act() {
+        
        if(isDood)    
-            {isDood=false;
-            leven--;
-            
-            }
+            {
+                isDood=false;
+                leven--;
+            } 
+        music();
         handleInput();
         veer();
         levens();
@@ -59,33 +63,42 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
+        
     }
+    public void music()
+        {
+           
+               if(!gm.isPlaying())
+               {
+                   gm.playLoop();
+               }
+        }
     
             public int levens()
             {
            
             if(leven==0)
             {
-            if(worldName=="MyWorld1")
-            {
-            Greenfoot.setWorld(new MyWorld());
-            }
-            if(worldName=="MyWorld2")
-            {
-            Greenfoot.setWorld(new MyWorld2());
-            }
-            if(worldName=="MyWorld3")
-            {
-            Greenfoot.setWorld(new MyWorld3());
-            }
-            if(worldName=="MyWorld4")
-            {
-            Greenfoot.setWorld(new MyWorld4());
-            }
+                gm.stop();
+                if(worldName=="MyWorld1")
+                {
+                    Greenfoot.setWorld(new MyWorld());
+                }
+                if(worldName=="MyWorld2")
+                {
+                    Greenfoot.setWorld(new MyWorld2());
+                }
+                if(worldName=="MyWorld3")
+                {
+                    Greenfoot.setWorld(new MyWorld3());
+                }
+                if(worldName=="MyWorld4")
+                {
+                    Greenfoot.setWorld(new MyWorld4());
+                }
             }
             return leven;
             }
-            
             
             public void platform() {
                 if (isTouching(Enemy.class)) {
@@ -186,7 +199,8 @@ public class Hero extends Mover {
                         if(schatkist==true)
                         {
                         Greenfoot.setWorld(new MyWorld2());
-                        String actieveWereld="MyWorld2";  
+                        String actieveWereld="MyWorld2"; 
+                        gm.stop();
                         return;
                      }
                     }
@@ -212,7 +226,8 @@ public class Hero extends Mover {
                             if(schatkist==true)
                             {
                             Greenfoot.setWorld(new MyWorld3());
-                            String actieveWereld="MyWorld3";  
+                            String actieveWereld="MyWorld3"; 
+                            gm.stop();
                             return;
                            }
                         }
@@ -238,7 +253,8 @@ public class Hero extends Mover {
                             if(schatkist==true)
                             {
                             Greenfoot.setWorld(new MyWorld4());
-                            String actieveWereld="MyWorld4";  
+                            String actieveWereld="MyWorld4";
+                            gm.stop();
                             return;
                            }
                         }

@@ -62,9 +62,9 @@ public class MyWorld4 extends World {
         addObject(badGuy,369,613);
         
         showText("Level 4", 80, 100);
-        Greenfoot.playSound("gameSound.wav");
+       
         
-       //showText("CHASE", 200, 200);**************
+       
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
