@@ -17,6 +17,6 @@ public class LevenTeller extends Mover
     List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int leven=myHero.levens();
-        getWorld().showText("Levens:"+myHero.levens(), 110,120);
+        getWorld().showText("Levens:"+myHero.levens(), 90,120);
     }    
 }

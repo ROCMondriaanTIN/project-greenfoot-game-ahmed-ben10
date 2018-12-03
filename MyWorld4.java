@@ -61,7 +61,7 @@ public class MyWorld4 extends World {
         addObject(hero, 110,613);
         addObject(badGuy,369,613);
         
-        showText("Level 4", 100, 100);
+        showText("Level 4", 80, 100);
         Greenfoot.playSound("gameSound.wav");
         
        //showText("CHASE", 200, 200);**************
@@ -111,8 +111,8 @@ public class MyWorld4 extends World {
         addObject(checkpoint,198,625);
 
 
-        GemTeller gt = new GemTeller();
-        addObject(gt, 0,0);
+        GemTeller gt = new GemTeller(actieveWereld);
+        addObject(gt, 105, 75);
         
         BoostSnelheid boost = new BoostSnelheid();
         addObject(boost,1896,373);

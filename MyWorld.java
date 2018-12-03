@@ -58,7 +58,7 @@ public class MyWorld extends World {
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
        Greenfoot.playSound("gameSound.wav");
-        showText("Level 1", 100, 100);
+        showText("Level 1", 80, 100);
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -110,8 +110,8 @@ public class MyWorld extends World {
        // Level2Button level2Button = new Level2Button();
         //addObject(level2Button,159,553);
 
-        GemTeller gt = new GemTeller();
-        addObject(gt, 0,0);
+        GemTeller gt = new GemTeller(actieveWereld);
+        addObject(gt, 105, 75);
         
         
     }

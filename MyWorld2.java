@@ -76,10 +76,10 @@
          addObject(camera, 0, 0);
          addObject(hero, 109,2244);
          
-         showText("Level 2", 100,100);
+         showText("Level 2", 80,100);
          Greenfoot.playSound("gameSound.wav");
-         GemTeller gt = new GemTeller();
-         addObject(gt, 0,0);
+         GemTeller gt = new GemTeller(actieveWereld);
+         addObject(gt, 105, 75);
          
          LevenTeller lt=new LevenTeller();
          addObject(lt,0,0);

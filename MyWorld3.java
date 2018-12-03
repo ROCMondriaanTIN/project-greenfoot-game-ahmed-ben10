@@ -54,7 +54,7 @@ public class MyWorld3 extends World {
         
         
         camera.follow(hero);
-        showText("Level 3", 100,100);
+        showText("Level 3", 80,100);
         Greenfoot.playSound("gameSound.wav");
         
         addObject(camera, 0, 0);
@@ -94,8 +94,8 @@ public class MyWorld3 extends World {
         DoorTop doorTop = new DoorTop();
         addObject(doorTop,101,1341);
  
-        GemTeller gt = new GemTeller();
-        addObject(gt, 0,0);
+        GemTeller gt = new GemTeller(actieveWereld);
+        addObject(gt, 105, 75);
         
         Checkpoint checkpoint1 = new Checkpoint();
         addObject(checkpoint1,280,1407);
