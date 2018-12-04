@@ -76,13 +76,11 @@
          addObject(camera, 0, 0);
          addObject(hero, 109,2244);
          
-         showText("Level 2", 80,100);
+          GemTeller gt = new GemTeller(actieveWereld);
+        addObject(gt, 90, 150);
          
-         GemTeller gt = new GemTeller(actieveWereld);
-         addObject(gt, 105, 75);
-         
-         LevenTeller lt=new LevenTeller();
-         addObject(lt,0,0);
+        LevenTeller lt=new LevenTeller();
+        addObject(lt,130,60);;
          
          BadGuy badGuy=new BadGuy(actieveWereld);
          addObject(badGuy,397,2233);

@@ -21,22 +21,22 @@ public class GemTeller extends Mover
         int gem=myHero.getGemBlue();   
          if(actieveWereld=="MyWorld1")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/13", 105, 75);    
+                getWorld().showText("Gems:"+myHero.getGemBlue()+"/13", 90, 150);    
             }
             
             if(actieveWereld=="MyWorld2")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/22", 105, 75);
+                getWorld().showText("Gems:"+myHero.getGemBlue()+"/22", 90, 150);
             }
             
             if(actieveWereld=="MyWorld3")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/36", 105, 75);
+                getWorld().showText("Gems:"+myHero.getGemBlue()+"/36", 90, 150);
             }
             
             if(actieveWereld=="MyWorld4")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/16", 105, 75);
+                getWorld().showText("Gems:"+myHero.getGemBlue()+"/16", 90, 150);
             }
     }    
 }

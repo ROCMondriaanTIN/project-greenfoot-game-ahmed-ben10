@@ -59,8 +59,7 @@ public class MyWorld extends World {
         addObject(camera, 150, 800);
         addObject(hero, 159,913);
         
-        
-        showText("Level 1", 80, 100);
+      
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -83,7 +82,7 @@ public class MyWorld extends World {
     private void prepare()
     {
         LevenTeller lt=new LevenTeller();
-        addObject(lt,0,0);
+        addObject(lt,130,60);
 
         BoostSnelheid boost1=new BoostSnelheid();
         addObject(boost1,4083,673);
@@ -113,7 +112,7 @@ public class MyWorld extends World {
         //addObject(level2Button,159,553);
 
         GemTeller gt = new GemTeller(actieveWereld);
-        addObject(gt, 105, 75);
+        addObject(gt, 90, 150);
         
         
     }

@@ -54,8 +54,6 @@ public class MyWorld3 extends World {
         
         
         camera.follow(hero);
-        showText("Level 3", 80,100);
-
         
         addObject(camera, 0, 0);
         addObject(hero, 101,1407);
@@ -83,7 +81,7 @@ public class MyWorld3 extends World {
     private void prepare()
     {
         LevenTeller lt=new LevenTeller();
-        addObject(lt,0,0);
+        addObject(lt,130,60);
         
         Key key1 = new Key();
         addObject(key1,1407,253);
@@ -94,8 +92,8 @@ public class MyWorld3 extends World {
         DoorTop doorTop = new DoorTop();
         addObject(doorTop,101,1341);
  
-        GemTeller gt = new GemTeller(actieveWereld);
-        addObject(gt, 105, 75);
+         GemTeller gt = new GemTeller(actieveWereld);
+        addObject(gt, 90, 150);
         
         Checkpoint checkpoint1 = new Checkpoint();
         addObject(checkpoint1,280,1407);

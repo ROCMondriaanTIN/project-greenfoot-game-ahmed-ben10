@@ -60,11 +60,7 @@ public class MyWorld4 extends World {
         addObject(camera, 150, 800);
         addObject(hero, 110,613);
         addObject(badGuy,369,613);
-        
-        showText("Level 4", 80, 100);
-       
-        
-       
+
         //addObject(new Enemy(),5555,613);
        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -87,7 +83,7 @@ public class MyWorld4 extends World {
     private void prepare()
     {
         LevenTeller lt=new LevenTeller();
-        addObject(lt,0,0);
+        addObject(lt,130,60);
          
         Door door = new Door();
         addObject(door,105,623);
@@ -112,7 +108,7 @@ public class MyWorld4 extends World {
 
 
         GemTeller gt = new GemTeller(actieveWereld);
-        addObject(gt, 105, 75);
+        addObject(gt, 90, 150);
         
         BoostSnelheid boost = new BoostSnelheid();
         addObject(boost,1896,373);

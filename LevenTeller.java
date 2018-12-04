@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.*;
 /**
  * Write a description of class LevenTeller here.
@@ -17,6 +17,21 @@ public class LevenTeller extends Mover
     List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int leven=myHero.levens();
-        getWorld().showText("Levens:"+myHero.levens(), 90,120);
+        //getWorld().showText("Levens:"+myHero.levens(), 90,120);
+        if(leven==3)
+        {
+        setImage("healtBare3.png");
+        getImage().scale(250, 100);
+        }
+        if(leven==2)
+        {
+        setImage("healtBare2.png");   
+        getImage().scale(250, 100);
+        }
+        if(leven==1)
+        {
+        setImage("healtBare1.png");  
+        getImage().scale(250, 100);  
+        }
     }    
 }
