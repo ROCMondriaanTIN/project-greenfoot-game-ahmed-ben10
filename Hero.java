@@ -9,7 +9,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    public int leven=3;
+    public  int leven=3;
     public  int gem=0;
     public  int x= 159;
     public  int y=913;
@@ -129,15 +129,14 @@ public class Hero extends Mover {
             public void doodTile()
             {
             for (Actor dodelijkeTile : getObjectsInRange(50, DodelijkeTile.class)) {
-            //if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
-               // getWorld().removeObject(this);
-               if(isTouching(DodelijkeTile.class))
+            if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
+               
                 setLocation(x,y);
                 isDood=true;
                 break;
             }
             }
-        //}
+        }
     
     
     public boolean touchingSchatkist()

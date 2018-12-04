@@ -16,7 +16,7 @@ public class SpringboardUpTile extends Tile
        
         for(Actor hero:getIntersectingObjects(Hero.class))
         {
-                
+        Greenfoot.playSound("springboardSound.wav");        
                     if(frames==1)
                     {
                     setImage("springboardDown.png");    

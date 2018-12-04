@@ -29,8 +29,7 @@ public class BadGuy extends Mover {
 
     @Override
     public void act() {
-        for(Actor hero:getObjectsInRange(10000000, Hero.class))
-        {
+       
             if(frames==1)
             {
                 setImage("flyFly1.png");  
@@ -42,7 +41,7 @@ public class BadGuy extends Mover {
                 frames=1;
             }
             frames++;
-    }
+   
         
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
