@@ -80,26 +80,11 @@ public class Hero extends Mover {
             if(leven==0)
             {
                 gm.stop();
-                if(worldName=="MyWorld1")
-                {
-                    Greenfoot.setWorld(new MyWorld());
-                }
-                if(worldName=="MyWorld2")
-                {
-                    Greenfoot.setWorld(new MyWorld2());
-                }
-                if(worldName=="MyWorld3")
-                {
-                    Greenfoot.setWorld(new MyWorld3());
-                }
-                if(worldName=="MyWorld4")
-                {
-                    Greenfoot.setWorld(new MyWorld4());
-                }
-            }
+                Greenfoot.setWorld(new Gameover(worldName));
+               
+            } 
             return leven;
-            }
-            
+        }
             public void platform() {
                 if (isTouching(Enemy.class)) {
                     velocityY = -1.2;

@@ -21,17 +21,17 @@ public class LevenTeller extends Mover
         if(leven==3)
         {
         setImage("healtBare3.png");
-        getImage().scale(250, 100);
+        getImage().scale(250, 50);
         }
         if(leven==2)
         {
         setImage("healtBare2.png");   
-        getImage().scale(250, 100);
+        getImage().scale(250, 50);
         }
         if(leven==1)
         {
         setImage("healtBare1.png");  
-        getImage().scale(250, 100);  
+        getImage().scale(250, 50);  
         }
     }    
 }

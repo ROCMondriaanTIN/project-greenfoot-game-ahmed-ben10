@@ -19,24 +19,25 @@ public class GemTeller extends Mover
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int gem=myHero.getGemBlue();   
+        
          if(actieveWereld=="MyWorld1")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/13", 90, 150);    
+                setImage(new GreenfootImage("Gems:"+gem+"/13",24,Color.BLACK,null));;    
             }
             
             if(actieveWereld=="MyWorld2")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/22", 90, 150);
+                setImage(new GreenfootImage("Gems:"+gem+"/22",24,Color.BLACK,null));
             }
             
             if(actieveWereld=="MyWorld3")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/36", 90, 150);
+                setImage(new GreenfootImage("Gems:"+gem+"/36",24,Color.BLACK,null));
             }
             
             if(actieveWereld=="MyWorld4")
             {
-                getWorld().showText("Gems:"+myHero.getGemBlue()+"/16", 90, 150);
+                setImage(new GreenfootImage("Gems:"+gem+"/16",24,Color.BLACK,null));
             }
     }    
 }
