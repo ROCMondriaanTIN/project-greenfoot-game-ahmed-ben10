@@ -82,6 +82,9 @@ public class MyWorld4 extends World {
      */
     private void prepare()
     {
+        Hart hart = new Hart();
+        addObject(hart,3193,373);
+        
         LevenTeller lt=new LevenTeller();
         addObject(lt,130,60);
          

@@ -18,7 +18,7 @@ public class GemTeller extends Mover
     {
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
-        int gem=myHero.getGemBlue();   
+        int gem=myHero.getGemBlue();  
         
          if(actieveWereld=="MyWorld1")
             {

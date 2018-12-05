@@ -76,8 +76,11 @@
          addObject(camera, 0, 0);
          addObject(hero, 109,2244);
          
-          GemTeller gt = new GemTeller(actieveWereld);
+        GemTeller gt = new GemTeller(actieveWereld);
         addObject(gt, 90, 150);
+        
+        Hart hart = new Hart();
+        addObject(hart,2911,2053);
          
         LevenTeller lt=new LevenTeller();
         addObject(lt,130,60);;
@@ -89,7 +92,7 @@
          addObject(checkpoint,190,2244);
          
          Checkpoint checkpoint2= new Checkpoint();
-         addObject(checkpoint2,3286,2124);
+         addObject(checkpoint2,2430,2124);
          
          Door door= new Door();
          addObject(door,109,2244);

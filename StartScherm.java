@@ -26,6 +26,6 @@ public class StartScherm extends World
     private void prepare()
     {
         Level1Button level1Button = new Level1Button();
-        addObject(level1Button,496,650);
+        addObject(level1Button,496,600);
     }
 }

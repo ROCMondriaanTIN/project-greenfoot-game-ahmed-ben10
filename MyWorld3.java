@@ -83,6 +83,12 @@ public class MyWorld3 extends World {
         LevenTeller lt=new LevenTeller();
         addObject(lt,130,60);
         
+        BoostSpring sb=new BoostSpring();
+        addObject(sb,4718,493);
+        
+        Hart hart = new Hart();
+        addObject(hart,2603,733);
+        
         Key key1 = new Key();
         addObject(key1,1407,253);
 

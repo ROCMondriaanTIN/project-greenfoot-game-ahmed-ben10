@@ -1,4 +1,4 @@
-import greenfoot.*;
+;import greenfoot.*;
 
 /**
  *
@@ -41,7 +41,7 @@ public class Hero extends Mover {
             {
                 isDood=false;  //isDood = !isDood
                 leven--;
-                setLocation(getX(),getY() - 500);
+                setLocation(getX(),getY() - 50);
                 
             } 
         music();
@@ -52,6 +52,7 @@ public class Hero extends Mover {
         boostSpringen();
         doodTile();
         getGemBlue();
+        hart();
         key();
         platform();
         touchingSchatkist();
@@ -66,6 +67,17 @@ public class Hero extends Mover {
         }
         applyVelocity();
         
+    }
+    public void hart()
+    {
+        if(leven<3)
+        {
+            if(isTouching(Hart.class))
+            {
+                removeTouching(Hart.class);
+                leven++;
+            }
+        }
     }
     public void music()
         {
@@ -108,7 +120,7 @@ public class Hero extends Mover {
             if(isTouching(BoostSpring.class))    
             {
             removeTouching(BoostSpring.class);
-            springen+=1;
+            springen+=2;
             
             }
             return springen;
@@ -321,7 +333,7 @@ public class Hero extends Mover {
     
     public void handleInput() {
         for (Actor Hero: getIntersectingObjects(JumpTile.class)){
-       if (Greenfoot.isKeyDown("UP")) {
+       if (Greenfoot.isKeyDown("UP")||Greenfoot.isKeyDown("Space")) {
             inAir=true;
             velocityY = -15-springen;
             Greenfoot.playSound("jumpSound.wav");
