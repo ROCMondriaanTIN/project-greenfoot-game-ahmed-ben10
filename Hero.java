@@ -39,8 +39,10 @@ public class Hero extends Mover {
         
        if(isDood)    
             {
-                isDood=false;
+                isDood=false;  //isDood = !isDood
                 leven--;
+                setLocation(getX(),getY() - 500);
+                
             } 
         music();
         handleInput();
@@ -115,9 +117,10 @@ public class Hero extends Mover {
             {
             for (Actor dodelijkeTile : getObjectsInRange(50, DodelijkeTile.class)) {
             if (dodelijkeTile != null && dodelijkeTile instanceof DodelijkeTile ) {
-               
                 setLocation(x,y);
                 isDood=true;
+               
+  
                 break;
             }
             }

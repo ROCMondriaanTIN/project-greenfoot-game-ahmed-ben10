@@ -16,7 +16,7 @@ public String worldName="";
         addObject(stop, 626, 503);
         
         Continue cn= new Continue(worldName);
-        addObject(cn, 326, 503);
+        addObject(cn, 325, 503);
         
         
 
