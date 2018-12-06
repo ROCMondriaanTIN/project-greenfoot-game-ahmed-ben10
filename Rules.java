@@ -1,25 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1Button here.
+ * Write a description of class Rules here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level1Button extends Mover
+public class Rules extends Mover
 {
-    public Level1Button()
+    public Rules()
     {
-    setImage("startButton.png");  
-    getImage().scale(410,214);
+    setImage("rules.png");    
     }
     public void act() 
     {
         applyVelocity();
+        applyVelocity();
         if(Greenfoot.mouseClicked(this))
         { 
-        Greenfoot.setWorld(new Selectscherm()); 
+        Greenfoot.setWorld(new RulesWorld()); 
         return;    
         }
+        
     }    
 }

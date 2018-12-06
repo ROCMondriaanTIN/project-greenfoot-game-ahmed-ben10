@@ -12,7 +12,6 @@ public class GemTeller extends Mover
     public GemTeller(String actieveWereld)
     {
      this.actieveWereld=actieveWereld; 
-     setImage("score.png");
     }
     public void act() 
     {
@@ -27,7 +26,7 @@ public class GemTeller extends Mover
             
             if(actieveWereld=="MyWorld2")
             {
-                setImage(new GreenfootImage("Gems:"+gem+"/22",24,Color.BLACK,null));
+                setImage(new GreenfootImage("Gems:"+gem+"/22",24,Color.YELLOW,null));
             }
             
             if(actieveWereld=="MyWorld3")
