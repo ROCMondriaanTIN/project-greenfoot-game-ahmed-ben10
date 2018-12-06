@@ -279,9 +279,9 @@ public class Hero extends Mover {
                         { 
                             if(schatkist==true)
                             {
-                            //Greenfoot.setWorld(new MyWorld4());
-                            //String actieveWereld="MyWorld4";  
-                            //return;
+                            Greenfoot.setWorld(new EindScherm());
+                            String actieveWereld="MyWorld4";  
+                            return;
                            }
                         }
                       } 
@@ -365,63 +365,57 @@ public class Hero extends Mover {
         
             if(frame==1)
             {
-            setImage("p1_walk01.png");
-    
+                setImage("p1_walk01.png");
             }
             if(frame==2)
             {
-            setImage("p1_walk02.png");
+                setImage("p1_walk02.png");
             }
             if(frame==3)
             {
-            setImage("p1_walk03.png");
+                setImage("p1_walk03.png");
             }
             
             if(frame==4)
             {
-            setImage("p1_walk04.png");
-            
+                setImage("p1_walk04.png");
             }
     
             if(frame==5)
             {
-            setImage("p1_walk05.png");
-            
+                setImage("p1_walk05.png");  
             }
             if(frame==6)
             {
-            setImage("p1_walk06.png");
-            
+                setImage("p1_walk06.png");
             }
             if(frame==7)
             {
-            setImage("p1_walk07.png");
-            
+                setImage("p1_walk07.png");
             }
             
             if(frame==8)
             {
-            setImage("p1_walk08.png");
+                setImage("p1_walk08.png");
             }
             
             if(frame==9)
             {
-            setImage("p1_walk09.png");
-            
+                setImage("p1_walk09.png");
             }
             
-        if(frame==10)
-        {
-        setImage("p1_walk10.png");
-        }
+           if(frame==10)
+           {
+               setImage("p1_walk10.png");
+           }
         
-        if(frame==11)
-        {
-        setImage("p1_walk11.png");
-        frame=1;
-        return ;
-        }
-        frame++;
+            if(frame==11)
+            {
+                setImage("p1_walk11.png");
+                frame=1;
+                return ;
+            }
+                frame++;
 }   
         public void framesLinks()
 {
