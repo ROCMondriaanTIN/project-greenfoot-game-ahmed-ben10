@@ -50,7 +50,10 @@ public class Hero extends Mover {
         levens();
         boostSnelheid();
         boostSpringen();
+        if(!Greenfoot.isKeyDown("k"))
+        {
         doodTile();
+        }
         getGemBlue();
         hart();
         key();

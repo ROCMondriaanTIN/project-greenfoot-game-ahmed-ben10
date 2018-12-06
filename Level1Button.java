@@ -18,7 +18,7 @@ public class Level1Button extends Mover
         applyVelocity();
         if(Greenfoot.mouseClicked(this))
         { 
-        Greenfoot.setWorld(new Selectscherm()); 
+        Greenfoot.setWorld(new  MyWorld()); 
         return;    
         }
     }    

@@ -25,7 +25,13 @@ public class StartScherm extends World
      */
     private void prepare()
     {
-        Level1Button level1Button = new Level1Button();
-        addObject(level1Button,496,600);
+        //Level1Button level1Button = new Level1Button();
+        //addObject(level1Button,496,600);
+        StartButton sb = new StartButton();
+        addObject(sb,490,550);
+        
+        Rules rules = new Rules();
+        addObject(rules,490, 600);
+
     }
 }
