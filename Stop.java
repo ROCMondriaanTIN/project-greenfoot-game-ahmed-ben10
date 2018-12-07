@@ -18,8 +18,7 @@ public class Stop extends Mover
         if(Greenfoot.mouseClicked(this))
         { 
         Greenfoot.setWorld(new StartScherm());
-        String actieveWereld="startscherm";  
-        return;    
+        String actieveWereld="startscherm";   
         }
     }    
 }

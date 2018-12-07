@@ -12,8 +12,8 @@ public String worldName="Gameover";
         this.setBackground("gameOver.png");
         this.worldName=worldName;
 
-        Stop stop= new Stop();
-        addObject(stop, 626, 503);
+        Stop home= new Stop();
+        addObject(home, 626, 503);
         
         Continue cn= new Continue(worldName);
         addObject(cn, 325, 503);
