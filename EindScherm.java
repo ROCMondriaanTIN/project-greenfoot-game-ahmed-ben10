@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class EindScherm extends World {
-public String worldName="";
+public String worldName="EindScherm";
 
     public EindScherm() {
         super(1000, 800, 1, false);

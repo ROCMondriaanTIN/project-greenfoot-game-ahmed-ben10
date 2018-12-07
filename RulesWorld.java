@@ -8,11 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RulesWorld extends World
 {
-
-    /**
-     * Constructor for objects of class Selectscherm.
-     * 
-     */
+    public String actieveWereld="RulesWorld"; 
     public RulesWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

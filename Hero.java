@@ -112,7 +112,7 @@ public class Hero extends Mover {
             if(isTouching(BoostSnelheid.class))    
             {
             removeTouching(BoostSnelheid.class);
-            snelheid+=1.0;
+            snelheid+=1.3;
             
             }
             return snelheid;
@@ -335,6 +335,12 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
+        if (isTouching(MovingPlatform.class)) {
+            velocityY = -1;
+            if (Greenfoot.isKeyDown("UP")||Greenfoot.isKeyDown("Space")) {
+                velocityY = -14;
+            }
+        }
         for (Actor Hero: getIntersectingObjects(JumpTile.class)){
        if (Greenfoot.isKeyDown("UP")||Greenfoot.isKeyDown("Space")) {
             inAir=true;
