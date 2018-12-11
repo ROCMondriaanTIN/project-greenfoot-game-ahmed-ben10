@@ -6,14 +6,15 @@ import greenfoot.*;
  *
  * @author R. Springer
  */
-public class BadGuy extends Mover {
+public class BadGuy extends Mover 
+{
     int frames=1;
     private double speed=0.75;
-    public boolean klaar=false;
-    public boolean ready=false;
+    boolean atEdge;
     public String actieveWereld="";
 
-    public BadGuy(String actieveWereld) {
+    public BadGuy(String actieveWereld) 
+    {
         super();
         setImage("flyFly1.png");
         speed = 1;
@@ -22,7 +23,8 @@ public class BadGuy extends Mover {
     }
 
     @Override
-    public void act() {
+    public void act() 
+    {
         List<Hero> heroList = this.getWorld().getObjects(Hero.class);
         Hero myHero = heroList.get(0);
         int xpos=myHero.x;
@@ -31,28 +33,66 @@ public class BadGuy extends Mover {
         int y = getY();
         int b=0;
         boolean dood=myHero.isDood;
-        boolean ready=false;
         up(); 
         frames();
-       //down();
+        atEdge();
+         //down();
         if(dood)
         {
-        setLocation((xpos+300),(ypos));   
+            setLocation((xpos+300),(ypos));  
+            atEdge=false;
         }
         velocityX = 4;
         applyVelocity();
        
     }
-    public void frames()
+
+    public boolean atEdge()
     {
-            if(frames==1)
+        if(actieveWereld=="MyWorld1")
+        {
+            if(getX()>6095)
             {
-                setImage("BadGuy.png");  
+               atEdge=true;
             }
+        }
+
+        if(actieveWereld =="MyWorld2")
+        {
+            if(getX()>6157)
+            {
+                atEdge=true;
+            }
+       }
+
+       if(actieveWereld =="MyWorld3")
+        {
+            if(getX()>6034)
+            {    
+                atEdge=true;    
+            }
+        }
+
+        if(actieveWereld =="MyWorld4")
+        {
+            if(getX()>5790)
+            {
+                atEdge=true; 
+            }
+        }
+        return atEdge;
+    }
+
+    public void frames()
+    {    
+              if(frames==1)
+            { 
+                setImage("BadGuy.png");    
+            }
+
             if(frames==2)
             {
-                setImage("flyFly1.png");  
-               
+                setImage("flyFly1.png");    
             }
             if(frames==3)
             {
@@ -61,58 +101,34 @@ public class BadGuy extends Mover {
             }
             frames++;    
     }
+
     public void up()
-        {
+    {       
             if(actieveWereld=="MyWorld2"||actieveWereld=="MyWorld3"||actieveWereld=="MyWorld4")
             {
                 for(Actor d:getObjectsInRange (70,JumpTile.class))
                     {    
+                        int s=getY();
+                        s-=6;
+                        int x= getX();
+                        int y = getY();
+                        setLocation(x,s) ; 
+                    }  
+                }
+            else
+            {    
+                for(Actor d:getObjectsInRange (70,JumpTile.class))
+                {    
                     int s=getY();
-                    s-=6;
+                    s-=10;
                     int x= getX();
                     int y = getY();
                     setLocation(x,s) ; 
-                    boolean klaar=true;
-                   }  
-                }
-            else
-            {
-                for(Actor d:getObjectsInRange (70,JumpTile.class))
-                {    
-                int s=getY();
-                s-=10;
-                int x= getX();
-                int y = getY();
-                setLocation(x,s) ; 
-                boolean klaar=true;
-               } 
-            }
-            
-            if(klaar)
-            {
-            ready=true;  
-            klaar=false;
+                } 
             }
     
     }
-        public void down()
-        {
-             if(ready)
-             {        
-            int s=getY();
-            int x= getX();
-            s-=40;
-            setLocation(x,s) ; 
-            ready=false;
-            
-                 for(Actor d:getObjectsInRange (70,JumpTile.class))
-                {    
-                 s=getY();
-                s+=10;
-                 x= getX();
-                setLocation(x,s) ;    
-                }
-            }
+        
     
 }
-}
+

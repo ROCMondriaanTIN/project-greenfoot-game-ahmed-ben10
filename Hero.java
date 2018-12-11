@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /**
  *
  * @author R. Springer
@@ -22,7 +22,9 @@ public class Hero extends Mover
     boolean level2=false;
     boolean schatkist=false;
     boolean isDood=false;
+    boolean removedBadGuy=false;
     GreenfootSound gm =new GreenfootSound("gameSound.wav");
+    
 
     public Hero(String worldName) 
     {
@@ -52,7 +54,7 @@ public class Hero extends Mover
         levens();// controleert levens
         boostSnelheid();//code voor een boost die ervoor zorgt dat je sneller wordt
         boostSpringen();//code voor een boost die ervoor zorgt dat je hoger kan springen 
-
+      
         if(!Greenfoot.isKeyDown("k"))//cheat voor als je niet dood wil gaan
         {
             doodTile();//cactussen,spikes en lava waardoor je doodn kan gaan
@@ -68,25 +70,43 @@ public class Hero extends Mover
         levels();//code die je naar de volgende level brengt
         // getPositie();//code die je X en Y positie geeft
         checkpointVlag();// Code voot j checkpoint die je nieuwe x en y coordinaten geeft
+        if(!removedBadGuy)
+        {
+            atTheEdge();//controleert of de BadGuy bij de edge of de wereld is
+        }
         velocityX *= drag;
         velocityY += acc;
 
         if (velocityY > gravity) 
-	{
+        {
             velocityY = gravity;
         }
         applyVelocity();
+    }    
         
+    
+    	
+    public void atTheEdge()
+    {
+        List<BadGuy> badList = this.getWorld().getObjects(BadGuy.class);
+        BadGuy myBadGuy = badList.get(0);
+        boolean atEdge= myBadGuy.atEdge();
+        
+        if(atEdge==true)
+        {
+            setLocation(x,y);
+            isDood=true;     
+        }
     }
-
+    
     public void enemies()
     {
-    	for(Actor enemy:getIntersectingObjects(Enemy.class))
-   	 {
+        for(Actor enemy:getIntersectingObjects(Enemy.class))
+        {
              setLocation(x,y);
              isDood=true;
              break;
-    	}   
+        }   
     }
 
     public void hart()
@@ -175,11 +195,12 @@ public class Hero extends Mover
              return schatkist;
           }  
 
-   	  public void removeBadGuy()
-  	  {
-        	if(isTouching(BadGuy.class)) 
-        	{
+      public void removeBadGuy()
+      {
+            if(isTouching(BadGuy.class)) 
+            {
                     removeTouching(BadGuy.class); 
+		    removedBadGuy=true;
 
                     if(worldName=="MyWorld1")
                     {
@@ -202,7 +223,7 @@ public class Hero extends Mover
                     }
                 return;
                 }
-     	}
+        }
     
         public void levels()
         {
