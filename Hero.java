@@ -64,7 +64,6 @@ public class Hero extends Mover
         getGemBlue();// code voor gems verzamellen
         hart();// code voor het verzamellen van leven 
         key();// code voor het pakken van de key
-        platform();// code oor de bewegende platform
         touchingSchatkist();//code voor het open maken van de schatkist
         removeBadGuy();// code die de badguy verwijdert en de schatkist toevoegd
         levels();//code die je naar de volgende level brengt
@@ -139,13 +138,7 @@ public class Hero extends Mover
          return leven;
      }
 
-     public void platform() 
-     {
-         if (isTouching(Enemy.class)) 
-         {
-             velocityY = -1.2;
-         }
-      }
+     
 
       public double boostSnelheid()
       {
@@ -380,6 +373,7 @@ public class Hero extends Mover
                    if (Greenfoot.isKeyDown("UP")||Greenfoot.isKeyDown("Space"))
                    {
                        velocityY = -14;
+                       Greenfoot.playSound("jumpSound.wav");
                    }
                }
 

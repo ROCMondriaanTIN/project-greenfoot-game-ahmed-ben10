@@ -9,19 +9,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Continue extends Mover
 {
     public String actieveWereld="";
+    GreenfootSound gameOver = new GreenfootSound("GameOverSound.wav");
+    
     public Continue(String actieveWereld)
     {
-    setImage("continue.png"); 
-    this.actieveWereld=actieveWereld;
+        setImage("continue.png"); 
+        this.actieveWereld=actieveWereld;
     }
     public void act() 
     {
-    applyVelocity();
+       applyVelocity();
+       gameOver.play();
         if(Greenfoot.mouseClicked(this))
         { 
             if(actieveWereld=="MyWorld1")
             {
-              Greenfoot.setWorld(new MyWorld());    
+              Greenfoot.setWorld(new MyWorld()); 
+               gameOver.stop();
             }
             if(actieveWereld=="MyWorld2")
             {
