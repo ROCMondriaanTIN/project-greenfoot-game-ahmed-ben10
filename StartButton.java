@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartButton extends Mover
 {
-    GreenfootSound start = new GreenfootSound("startScherm.wav");
     public StartButton()
     {
         setImage("buttonstartgame.png");
@@ -16,14 +15,9 @@ public class StartButton extends Mover
     public void act() 
     {
         applyVelocity();
-        if(!start.isPlaying())
-        {
-            start.playLoop();
-        }
         
         if(Greenfoot.mouseClicked(this))
-        { 
-            start.stop();
+        {
             Greenfoot.setWorld(new MyWorld());
             return;    
         }
