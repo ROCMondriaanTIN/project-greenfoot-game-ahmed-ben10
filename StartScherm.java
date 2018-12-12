@@ -14,7 +14,7 @@ public class StartScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000,800, 1,false); 
-        this.setBackground("gameAchtergrond.PNG");
+        this.setBackground("gameAchtergrond.png");
         prepare();
         
     }
@@ -32,6 +32,9 @@ public class StartScherm extends World
         
         Rules rules = new Rules();
         addObject(rules,490, 600);
+        
+        HelpButton hb = new HelpButton();
+        addObject(hb,490,650);
 
     }
 }

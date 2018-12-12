@@ -95,10 +95,10 @@ public class MyWorld4 extends World {
         addObject(doorTop,105,553);
 
         Door door1 = new Door();
-        addObject(door1,5676,385);
+        addObject(door1,5534,385);
 
         DoorTop doorTop1 = new DoorTop();
-        addObject(doorTop1,5676,319);
+        addObject(doorTop1,5534,319);
 
         Key key1 = new Key();
         addObject(key1,4274,258);

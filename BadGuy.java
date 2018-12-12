@@ -42,7 +42,15 @@ public class BadGuy extends Mover
             setLocation((xpos+300),(ypos));  
             atEdge=false;
         }
-        velocityX = 4;
+        
+        if(actieveWereld=="MyWorld4")
+        {    
+            velocityX = 5;
+	}
+	else
+	{
+	    velocityX = 4;	
+	}
         applyVelocity();
        
     }
@@ -75,7 +83,7 @@ public class BadGuy extends Mover
 
         if(actieveWereld =="MyWorld4")
         {
-            if(getX()>5790)
+            if(getX()>5786)
             {
                 atEdge=true; 
             }

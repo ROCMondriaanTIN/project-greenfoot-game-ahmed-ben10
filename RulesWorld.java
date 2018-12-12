@@ -14,18 +14,9 @@ public class RulesWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
        super(1000,800, 1,false); 
         this.setBackground("rulesGame.png");
-        prepare();
+        Stop stop= new Stop();
+        addObject(stop, 496, 700);
         
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        Stop stop= new Stop();
-        addObject(stop, 496, 700);
- 
-    }
 }
